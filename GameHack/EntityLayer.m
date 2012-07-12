@@ -22,7 +22,7 @@
         
       // Add a sheep
       Sheep *sheep = [[Sheep alloc] init];
-      sheep.position = ccp( size.width /2 , size.height/2 );
+      sheep.position = ccp(size.width /4 , size.height/4);
       [self addChild:sheep];
       
         [self scheduleUpdate];

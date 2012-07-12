@@ -10,8 +10,8 @@ NSUInteger const SheepPoints = 100;
   self = [super init];
   if (self) {
     // Load sheep sprite
-    self.sprite = [CCSprite spriteWithFile:@"Icon@2x.png"];
-    
+    self.sprite = [CCSprite spriteWithFile:@"Sheep.png"];
+    self.state = AnimalStateWalking;
     [self addChild:self.sprite];
   }
   return self;
@@ -38,8 +38,44 @@ NSUInteger const SheepPoints = 100;
 #pragma mark Touch methods
 - (void) wasTouched
 {
+  // We are no longer interested in touches, stop accepting them
+  self.touchEnabled = NO;
+  self.state = AnimalStateCaptured;
+  
   // nothing in animal classes, subclasses implement
   NSLog(@"Baaaa, I was touched");
+  
+  float time = 2;
+  
+  CGPoint penPoint = ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2);
+  
+
+  // Rotate to look at the pen
+  id rotate = [CCRotateTo actionWithDuration:0.2 angle:CC_RADIANS_TO_DEGREES(atan2(fabs(penPoint.x - self.position.x),fabs(penPoint.y - self.position.y)))];
+  
+  // Scale up and back to original over the time it takes to get back to pen
+  id scaleUp = [CCScaleTo actionWithDuration:time/2 scale:1.5];
+  id scaleDown = [CCScaleTo actionWithDuration:time/2 scale:1];
+  id scale = [CCSequence actionWithArray:@[rotate, scaleUp, scaleDown]];
+  
+  // Move to pen
+  id moveTo = [CCMoveTo actionWithDuration:time position: penPoint];
+  
+  // Scale and move at the same time
+  id spawnAction = [CCSpawn actionWithArray:@[scale, moveTo]];
+
+  // After in pen, callback to let us know
+  id actionCallFunc = [CCCallFunc actionWithTarget:self selector:@selector(wasMovedToPen)];
+  id actionSequence = [CCSequence actionWithArray:@[spawnAction, actionCallFunc]];
+
+  [self runAction:actionSequence];
+  
+}
+
+- (void) wasMovedToPen
+{
+  self.state = AnimalStateInPen;
+  NSLog(@"Baaa, I'm stuck in a pen");
 }
 
 
