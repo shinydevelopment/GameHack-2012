@@ -7,6 +7,7 @@
 //
 
 #import "EntityLayer.h"
+#import "Sheep.h"
 
 @implementation EntityLayer
 
@@ -40,6 +41,10 @@
 {
     _lastSheepRelease = CACurrentMediaTime();
     CCLOG(@"Emit sheep");
+    
+    Sheep *sheep = [[Sheep alloc] init];
+    
+    
 }
 
 @end

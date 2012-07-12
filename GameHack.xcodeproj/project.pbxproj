@@ -880,13 +880,13 @@
 			isa = PBXGroup;
 			children = (
 				F677D13B15AF6300008A7F68 /* GameLayer.m */,
+				F677D13E15AF6300008A7F68 /* GameLayer.h */,
 				F677D13C15AF6300008A7F68 /* EntityLayer.m */,
 				F677D13D15AF6300008A7F68 /* EntityLayer.h */,
-				F677D13E15AF6300008A7F68 /* GameLayer.h */,
-				F677D13F15AF6300008A7F68 /* HudLayer.h */,
 				F677D14015AF6300008A7F68 /* HudLayer.m */,
-				F677D14115AF6300008A7F68 /* DecorationLayer.h */,
+				F677D13F15AF6300008A7F68 /* HudLayer.h */,
 				F677D14215AF6300008A7F68 /* DecorationLayer.m */,
+				F677D14115AF6300008A7F68 /* DecorationLayer.h */,
 			);
 			name = "Game Scene";
 			sourceTree = "<group>";

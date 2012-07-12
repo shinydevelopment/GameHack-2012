@@ -50,11 +50,11 @@
         _hudLayer.position = self.position;
         [self addChild:_hudLayer];
         
-        self.isTouchEnabled = YES;
+        //self.isTouchEnabled = YES;
     }
     return self;
 }
-
+/*
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -67,7 +67,7 @@
     
     [self updateScore:10];
 }
-
+*/
 - (void)livesLost:(int)numberLivesLost
 {
     _livesLeft -= numberLivesLost;
