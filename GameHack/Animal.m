@@ -86,39 +86,51 @@
 
 - (void)walkPath:(NSArray *)pathArray
 {
-    self.wayPoints = [[NSArray alloc] initWithArray:pathArray];
-    
-    CGPoint startPoint = [self.wayPoints[0] CGPointValue];
-    self.targetIndex = 1;
-    
-    self.position = startPoint;
-    
-    NSMutableArray *actions = [NSMutableArray array];
-    
-    for (int i=self.targetIndex; i<[self.wayPoints count]; i++) {
-        id rotation = [CCRotateTo actionWithDuration:0.3 angle:[self angleFromPoint:[self.wayPoints[i-1] CGPointValue] to:[self.wayPoints[i] CGPointValue]]];
-        id transform = [CCMoveTo actionWithDuration:1.0 position:[self.wayPoints[i] CGPointValue]];
-        
-        [actions addObject:rotation];
-        [actions addObject:transform];
-    }
-    
+    NSMutableArray *actions = [self actionsForPath:[[NSArray alloc] initWithArray:pathArray] withLoop:NO];
+
     id arrived = [CCCallBlock actionWithBlock:^{
-        NSLog(@"Baaaaa! Made it! Phew!");
+      NSLog(@"Baaaaa! Made it! Phew!");
     }];
     
     [actions addObject:arrived];
-    
+  
     id sequence = [CCSequence actionWithArray:actions];
-    
+
     [self runAction:sequence];
+}
+
+- (NSMutableArray *)actionsForPath:(NSArray *)pathPoints withLoop:(BOOL)loops
+{
+  CGPoint startPoint = [pathPoints[0] CGPointValue];
+  NSInteger targetIndex = 1;
+  
+  self.position = startPoint;
+  
+  NSMutableArray *actions = [NSMutableArray array];
+  
+  for (NSInteger i=targetIndex; i<[pathPoints count]; i++) {
+    id rotation = [CCRotateTo actionWithDuration:0.3 angle:[self angleFromPoint:[pathPoints[i-1] CGPointValue] to:[pathPoints[i] CGPointValue]]];
+    id transform = [CCMoveTo actionWithDuration:1.0 position:[pathPoints[i] CGPointValue]];
+    
+    [actions addObject:rotation];
+    [actions addObject:transform];
+  }
+  
+  if (loops) {
+    id rotation = [CCRotateTo actionWithDuration:0.3 angle:[self angleFromPoint:[pathPoints[[pathPoints count]-1] CGPointValue] to:startPoint]];
+    id transform = [CCMoveTo actionWithDuration:1.0 position:startPoint];
+    
+    [actions addObject:rotation];
+    [actions addObject:transform];
+  }
+  
+  return actions;
 }
 
 - (float)angleFromPoint:(CGPoint)from to:(CGPoint)to
 {
     CGPoint desiredDirection = [self normalizeVector:ccpSub(to, from)];
-    CGPoint velocity = ccpMult(desiredDirection, self.speed);
-    return [self angleForVector:velocity];
+    return [self angleForVector:desiredDirection];
 }
 
 - (CGPoint)normalizeVector:(CGPoint)vector

@@ -12,9 +12,6 @@ NSUInteger const SheepPoints = 100;
     // Load sheep sprite
     self.sprite = [CCSprite spriteWithFile:@"Sheep.png"];
       
-      self.speed = 2;
-      self.noise = 10;
-      
     [self addChild:self.sprite];
   }
   return self;
