@@ -11,7 +11,7 @@ NSUInteger const SheepPoints = 100;
   if (self) {
     // Load sheep sprite
     self.sprite = [CCSprite spriteWithFile:@"Sheep.png"];
-    
+    self.state = AnimalStateWalking;
     [self addChild:self.sprite];
   }
   return self;
@@ -40,6 +40,7 @@ NSUInteger const SheepPoints = 100;
 {
   // We are no longer interested in touches, stop accepting them
   self.touchEnabled = NO;
+  self.state = AnimalStateCaptured;
   
   // nothing in animal classes, subclasses implement
   NSLog(@"Baaaa, I was touched");
@@ -73,6 +74,7 @@ NSUInteger const SheepPoints = 100;
 
 - (void) wasMovedToPen
 {
+  self.state = AnimalStateInPen;
   NSLog(@"Baaa, I'm stuck in a pen");
 }
 

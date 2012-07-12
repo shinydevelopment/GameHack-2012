@@ -2,14 +2,16 @@
 
 enum {
   AnimalStateNone,
-  AnimalStateCaptured
+  AnimalStateWalking,
+  AnimalStateCaptured,
+  AnimalStateInPen
 };
 typedef NSInteger AnimalStates;
 
 @interface Animal : CCNode <CCTargetedTouchDelegate>
 
 @property (strong) CCSprite *sprite;
-@property (assign) AnimalStates *state;
+@property (assign) AnimalStates state;
 @property (assign) ccTime startTime;
 @property (readonly) NSUInteger points;
 @property (assign) CGPathRef *path;
