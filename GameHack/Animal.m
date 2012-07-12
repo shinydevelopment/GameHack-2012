@@ -46,18 +46,18 @@
   return YES;
 }
 
-- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
-  CGPoint touchPoint = [touch locationInView:[touch view]];
-  touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
-  
-  NSLog(@"ccTouch Moved is called");
-}
-
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-  NSLog(@"ccTouchEnded is called");
-}
+//- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+//{
+//  CGPoint touchPoint = [touch locationInView:[touch view]];
+//  touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
+//  
+//  NSLog(@"ccTouch Moved is called");
+//}
+//
+//- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+//{
+//  NSLog(@"ccTouchEnded is called");
+//}
 
 - (void) wasTouched
 {
