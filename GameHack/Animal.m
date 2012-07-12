@@ -8,10 +8,7 @@
 - (id)init
 {
   self = [super init];
-  if (self) {
-    self.startTime = CACurrentMediaTime();
-    
-    [self scheduleUpdate];
+  if (self) {    
   }
   return self;
 }
