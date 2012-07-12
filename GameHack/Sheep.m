@@ -44,12 +44,23 @@ NSUInteger const SheepPoints = 100;
   // nothing in animal classes, subclasses implement
   NSLog(@"Baaaa, I was touched");
   
-  id actionTo = [CCMoveTo actionWithDuration: 2 position: ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2)];
+  float time = 2;
+  
+  // Scale up and back to original over the time it takes to get back to pen
+  id scaleUp = [CCScaleTo actionWithDuration:time/2 scale:1.5];
+  id scaleDown = [CCScaleTo actionWithDuration:time/2 scale:1];
+  id scale = [CCSequence actionWithArray:@[scaleUp, scaleDown]];
+  
+  // Move to pen
+  id moveTo = [CCMoveTo actionWithDuration:time position: ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2)];
+  
+  // Scale and move at the same time
+  id spawnAction = [CCSpawn actionWithArray:@[scale, moveTo]];
+
+  // After in pen, callback to let us know
   id actionCallFunc = [CCCallFunc actionWithTarget:self selector:@selector(wasMovedToPen)];
-  
-  id actionSequence = [CCSequence actions: actionTo, actionCallFunc, nil];
-  
-//  [sprite runAction:[CCRepeatForever actionWithAction:action]];
+  id actionSequence = [CCSequence actionWithArray:@[spawnAction, actionCallFunc]];
+
   [self runAction:actionSequence];
   
 }
