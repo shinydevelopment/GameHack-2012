@@ -4,6 +4,8 @@
 
 @implementation Animal
 
+@synthesize touchEnabled = _touchEnabled;
+
 #pragma mark Object lifecycle
 - (id)init
 {
@@ -13,6 +15,23 @@
   return self;
 }
 
+#pragma mark Properties
+- (BOOL)touchEnabled
+{
+  return _touchEnabled;
+}
+
+- (void)setTouchEnabled:(BOOL)touchEnabled
+{
+  if (touchEnabled) {
+    [[[CCDirectorIOS sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+  } else {
+    [[[CCDirectorIOS sharedDirector] touchDispatcher] removeDelegate:self];
+  }
+  _touchEnabled = touchEnabled;
+}
+
+#pragma mark Touch
 - (CGRect)rect
 {
   CGSize s = [self.sprite contentSize];
@@ -26,14 +45,13 @@
 
 - (void)onEnter
 {
-  [[[CCDirectorIOS sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-  
+  self.touchEnabled = YES;
   [super onEnter];
 }
 
 - (void)onExit
 {
-  [[[CCDirectorIOS sharedDirector] touchDispatcher] removeDelegate:self];
+  self.touchEnabled = NO;
   [super onExit];
 }
 

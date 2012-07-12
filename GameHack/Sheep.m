@@ -38,8 +38,25 @@ NSUInteger const SheepPoints = 100;
 #pragma mark Touch methods
 - (void) wasTouched
 {
+  // We are no longer interested in touches, stop accepting them
+  self.touchEnabled = NO;
+  
   // nothing in animal classes, subclasses implement
   NSLog(@"Baaaa, I was touched");
+  
+  id actionTo = [CCMoveTo actionWithDuration: 2 position: ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2)];
+  id actionCallFunc = [CCCallFunc actionWithTarget:self selector:@selector(wasMovedToPen)];
+  
+  id actionSequence = [CCSequence actions: actionTo, actionCallFunc, nil];
+  
+//  [sprite runAction:[CCRepeatForever actionWithAction:action]];
+  [self runAction:actionSequence];
+  
+}
+
+- (void) wasMovedToPen
+{
+  NSLog(@"Baaa, I'm stuck in a pen");
 }
 
 
