@@ -4,6 +4,8 @@
 
 @implementation Animal
 
+@synthesize touchEnabled = _touchEnabled;
+
 #pragma mark Object lifecycle
 - (id)init
 {
@@ -13,6 +15,23 @@
   return self;
 }
 
+#pragma mark Properties
+- (BOOL)touchEnabled
+{
+  return _touchEnabled;
+}
+
+- (void)setTouchEnabled:(BOOL)touchEnabled
+{
+  if (touchEnabled) {
+    [[[CCDirectorIOS sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+  } else {
+    [[[CCDirectorIOS sharedDirector] touchDispatcher] removeDelegate:self];
+  }
+  _touchEnabled = touchEnabled;
+}
+
+#pragma mark Touch
 - (CGRect)rect
 {
   CGSize s = [self.sprite contentSize];
@@ -26,14 +45,13 @@
 
 - (void)onEnter
 {
-  [[[CCDirectorIOS sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-  
+  self.touchEnabled = YES;
   [super onEnter];
 }
 
 - (void)onExit
 {
-  [[[CCDirectorIOS sharedDirector] touchDispatcher] removeDelegate:self];
+  self.touchEnabled = NO;
   [super onExit];
 }
 
@@ -75,40 +93,32 @@
     
     self.position = startPoint;
     
-    [self scheduleUpdate];
-}
-
-- (void)update:(ccTime)dt
-{
-    if (self.state == AnimalStateNone) {
-        self.targetLoc = [self.wayPoints[self.targetIndex] CGPointValue];
+    NSMutableArray *actions = [NSMutableArray array];
+    
+    for (int i=self.targetIndex; i<[self.wayPoints count]; i++) {
+        id rotation = [CCRotateTo actionWithDuration:0.3 angle:[self angleFromPoint:[self.wayPoints[i-1] CGPointValue] to:[self.wayPoints[i] CGPointValue]]];
+        id transform = [CCMoveTo actionWithDuration:1.0 position:[self.wayPoints[i] CGPointValue]];
         
-        CGPoint desiredDirection = [self normalizeVector:ccpSub(self.targetLoc, self.position)];
-        self.velocity = ccpMult(desiredDirection, self.speed);
-        self.position = ccpAdd(self.position, self.velocity);
-        
-        self.rotation = [self angleForVector:self.velocity];
-        
-        float dx = fabsf(self.position.x - self.targetLoc.x);
-        float dy = fabsf(self.position.y - self.targetLoc.y);
-        
-        if (sqrtf(dx*dx+dy*dy) < 10) {
-            self.targetIndex++;
-        }
-        
-        if (self.targetIndex >= [self.wayPoints count]) {
-            [self unscheduleUpdate];
-            NSLog(@"Baaaaa!!! Made it! Phew!");
-        }
+        [actions addObject:rotation];
+        [actions addObject:transform];
     }
+    
+    id arrived = [CCCallBlock actionWithBlock:^{
+        NSLog(@"Baaaaa! Made it! Phew!");
+    }];
+    
+    [actions addObject:arrived];
+    
+    id sequence = [CCSequence actionWithArray:actions];
+    
+    [self runAction:sequence];
 }
 
-#pragma mark - math
-
-- (float)randFrom:(float)start to:(float)end
+- (float)angleFromPoint:(CGPoint)from to:(CGPoint)to
 {
-    float randomFloat = (arc4random()%1000)/1000.0;
-    return randomFloat*(end-start)+start;
+    CGPoint desiredDirection = [self normalizeVector:ccpSub(to, from)];
+    CGPoint velocity = ccpMult(desiredDirection, self.speed);
+    return [self angleForVector:velocity];
 }
 
 - (CGPoint)normalizeVector:(CGPoint)vector
