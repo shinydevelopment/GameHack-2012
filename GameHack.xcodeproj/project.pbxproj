@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3721EE9B15AF428D00AB0682 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3721EE9A15AF428D00AB0682 /* Animal.m */; };
+		3721EE9E15AF42BF00AB0682 /* Sheep.m in Sources */ = {isa = PBXBuildFile; fileRef = 3721EE9D15AF42BF00AB0682 /* Sheep.m */; };
+		3721EEA115AF42DF00AB0682 /* Wolf.m in Sources */ = {isa = PBXBuildFile; fileRef = 3721EEA015AF42DF00AB0682 /* Wolf.m */; };
 		377C829015AF3DCE00743C74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377C828F15AF3DCE00743C74 /* QuartzCore.framework */; };
 		377C829215AF3DCE00743C74 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377C829115AF3DCE00743C74 /* OpenGLES.framework */; };
 		377C829415AF3DCE00743C74 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377C829315AF3DCE00743C74 /* OpenAL.framework */; };
@@ -137,6 +140,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3721EE9915AF428D00AB0682 /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		3721EE9A15AF428D00AB0682 /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		3721EE9C15AF42BF00AB0682 /* Sheep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sheep.h; sourceTree = "<group>"; };
+		3721EE9D15AF42BF00AB0682 /* Sheep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sheep.m; sourceTree = "<group>"; };
+		3721EE9F15AF42DF00AB0682 /* Wolf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wolf.h; sourceTree = "<group>"; };
+		3721EEA015AF42DF00AB0682 /* Wolf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wolf.m; sourceTree = "<group>"; };
 		377C828B15AF3DCE00743C74 /* GameHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		377C828F15AF3DCE00743C74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		377C829115AF3DCE00743C74 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -423,6 +432,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3721EE9715AF425F00AB0682 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3721EE9915AF428D00AB0682 /* Animal.h */,
+				3721EE9A15AF428D00AB0682 /* Animal.m */,
+				3721EE9C15AF42BF00AB0682 /* Sheep.h */,
+				3721EE9D15AF42BF00AB0682 /* Sheep.m */,
+				3721EE9F15AF42DF00AB0682 /* Wolf.h */,
+				3721EEA015AF42DF00AB0682 /* Wolf.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		377C828015AF3DCD00743C74 = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +481,7 @@
 		377C82A115AF3DCE00743C74 /* GameHack */ = {
 			isa = PBXGroup;
 			children = (
+				3721EE9715AF425F00AB0682 /* Models */,
 				377C841915AF3DD100743C74 /* AppDelegate.h */,
 				377C841A15AF3DD100743C74 /* AppDelegate.m */,
 				377C841C15AF3DD100743C74 /* HelloWorldLayer.h */,
@@ -1015,6 +1038,9 @@
 				377C841E15AF3DD100743C74 /* HelloWorldLayer.m in Sources */,
 				377C842115AF3DD100743C74 /* IntroLayer.m in Sources */,
 				55B8933E15AF48B900E1F30B /* PathManager.m in Sources */,
+				3721EE9B15AF428D00AB0682 /* Animal.m in Sources */,
+				3721EE9E15AF42BF00AB0682 /* Sheep.m in Sources */,
+				3721EEA115AF42DF00AB0682 /* Wolf.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
