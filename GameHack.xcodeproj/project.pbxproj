@@ -133,6 +133,7 @@
 		377C841B15AF3DD100743C74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C841A15AF3DD100743C74 /* AppDelegate.m */; };
 		377C841E15AF3DD100743C74 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C841D15AF3DD100743C74 /* HelloWorldLayer.m */; };
 		377C842115AF3DD100743C74 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C842015AF3DD100743C74 /* IntroLayer.m */; };
+		55B8933E15AF48B900E1F30B /* PathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B8933D15AF48B900E1F30B /* PathManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -398,6 +399,8 @@
 		377C841D15AF3DD100743C74 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		377C841F15AF3DD100743C74 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		377C842015AF3DD100743C74 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		55B8933C15AF48B900E1F30B /* PathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathManager.h; sourceTree = "<group>"; };
+		55B8933D15AF48B900E1F30B /* PathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +468,8 @@
 				377C82A215AF3DCE00743C74 /* Resources */,
 				377C82BC15AF3DCE00743C74 /* libs */,
 				377C841515AF3DD100743C74 /* Supporting Files */,
+				55B8933C15AF48B900E1F30B /* PathManager.h */,
+				55B8933D15AF48B900E1F30B /* PathManager.m */,
 			);
 			path = GameHack;
 			sourceTree = "<group>";
@@ -1009,6 +1014,7 @@
 				377C841B15AF3DD100743C74 /* AppDelegate.m in Sources */,
 				377C841E15AF3DD100743C74 /* HelloWorldLayer.m in Sources */,
 				377C842115AF3DD100743C74 /* IntroLayer.m in Sources */,
+				55B8933E15AF48B900E1F30B /* PathManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
