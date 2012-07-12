@@ -8,6 +8,7 @@
 
 #import "EntityLayer.h"
 #import "Sheep.h"
+#import "PathManager.h"
 
 @implementation EntityLayer
 
@@ -15,16 +16,11 @@
 {
     self = [super init];
     if (self) {
-        CGSize size = self.contentSize;
+        //CGSize size = self.contentSize;
       
         _lastSheepRelease = -1;
         _sheepDelay = 3;
         
-      // Add a sheep
-      Sheep *sheep = [[Sheep alloc] init];
-      sheep.position = ccp( size.width /2 , size.height/2 );
-      [self addChild:sheep];
-      
         [self scheduleUpdate];
     }
     return self;
@@ -49,9 +45,11 @@
     _lastSheepRelease = CACurrentMediaTime();
     CCLOG(@"Emit sheep");
     
-    Sheep *sheep = [[Sheep alloc] init];
+    NSArray *randomPath = [[PathManager sharedInstance] arrayWithWaypoints];
     
-    
+    Sheep *mySheep = [[Sheep alloc] init];
+    [self addChild:mySheep];
+    [mySheep walkPath:randomPath];
 }
 
 @end

@@ -11,6 +11,8 @@ NSUInteger const SheepPoints = 100;
   if (self) {
     // Load sheep sprite
     self.sprite = [CCSprite spriteWithFile:@"Sheep.png"];
+      self.speed = 2;
+      self.noise = 10;
     
     [self addChild:self.sprite];
   }
@@ -30,10 +32,10 @@ NSUInteger const SheepPoints = 100;
 //! * 0 means that the action just started
 //! * 0.5 means that the action is in the middle
 //! * 1 means that the action is over
--(void) update: (ccTime) time
-{
-  
-}
+//-(void) update: (ccTime) time
+//{
+//
+//}
 
 #pragma mark Touch methods
 - (void) wasTouched

@@ -12,6 +12,17 @@ typedef NSInteger AnimalStates;
 @property (assign) AnimalStates *state;
 @property (assign) ccTime startTime;
 @property (readonly) NSUInteger points;
-@property (assign) CGPathRef *path;
+
+@property (nonatomic, strong) NSArray *wayPoints;
+@property (nonatomic) int targetIndex;
+@property (nonatomic) CGPoint velocity;
+@property (nonatomic) float speed;
+@property (nonatomic) float radius;
+@property (nonatomic) float distance;
+@property (nonatomic) float angle;
+@property (nonatomic) float noise;
+@property (nonatomic) CGPoint targetLoc;
+
+- (void)walkPath:(NSArray*)pathArray;
 
 @end
