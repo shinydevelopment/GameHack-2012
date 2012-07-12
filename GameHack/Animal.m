@@ -86,7 +86,7 @@
 
 - (void)walkPath:(NSArray *)pathArray
 {
-    NSMutableArray *actions = [self actionsForPath:[[NSArray alloc] initWithArray:pathArray] withLoop:NO];
+    NSMutableArray *actions = [self actionsForPath:pathArray withLoop:NO];
 
     id arrived = [CCCallBlock actionWithBlock:^{
       NSLog(@"Baaaaa! Made it! Phew!");
