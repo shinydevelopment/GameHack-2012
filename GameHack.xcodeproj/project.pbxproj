@@ -136,7 +136,7 @@
 		377C841B15AF3DD100743C74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C841A15AF3DD100743C74 /* AppDelegate.m */; };
 		377C841E15AF3DD100743C74 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C841D15AF3DD100743C74 /* HelloWorldLayer.m */; };
 		377C842115AF3DD100743C74 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 377C842015AF3DD100743C74 /* IntroLayer.m */; };
-		5557986915AF6B9800B72C04 /* Sheep-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5557986715AF6B9800B72C04 /* Sheep-hd.png */; };
+		5557986915AF6B9800B72C04 /* Sheep-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5557986715AF6B9800B72C04 /* Sheep-ipadhd.png */; };
 		5557986A15AF6B9800B72C04 /* Sheep.png in Resources */ = {isa = PBXBuildFile; fileRef = 5557986815AF6B9800B72C04 /* Sheep.png */; };
 		55B8933E15AF48B900E1F30B /* PathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B8933D15AF48B900E1F30B /* PathManager.m */; };
 		F677D14315AF6300008A7F68 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13B15AF6300008A7F68 /* GameLayer.m */; };
@@ -415,7 +415,7 @@
 		377C841D15AF3DD100743C74 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		377C841F15AF3DD100743C74 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		377C842015AF3DD100743C74 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		5557986715AF6B9800B72C04 /* Sheep-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sheep-hd.png"; sourceTree = "<group>"; };
+		5557986715AF6B9800B72C04 /* Sheep-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sheep-ipadhd.png"; sourceTree = "<group>"; };
 		5557986815AF6B9800B72C04 /* Sheep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sheep.png; sourceTree = "<group>"; };
 		55B8933C15AF48B900E1F30B /* PathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathManager.h; sourceTree = "<group>"; };
 		55B8933D15AF48B900E1F30B /* PathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathManager.m; sourceTree = "<group>"; };
@@ -892,7 +892,7 @@
 		5557986615AF6B7000B72C04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5557986715AF6B9800B72C04 /* Sheep-hd.png */,
+				5557986715AF6B9800B72C04 /* Sheep-ipadhd.png */,
 				5557986815AF6B9800B72C04 /* Sheep.png */,
 			);
 			path = Images;
@@ -977,7 +977,7 @@
 				377C82BB15AF3DCE00743C74 /* iTunesArtwork in Resources */,
 				377C83F915AF3DD000743C74 /* ChangeLog in Resources */,
 				F677D14815AF630F008A7F68 /* gameBackground.png in Resources */,
-				5557986915AF6B9800B72C04 /* Sheep-hd.png in Resources */,
+				5557986915AF6B9800B72C04 /* Sheep-ipadhd.png in Resources */,
 				5557986A15AF6B9800B72C04 /* Sheep.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
