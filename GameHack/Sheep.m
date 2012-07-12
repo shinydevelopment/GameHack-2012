@@ -46,13 +46,19 @@ NSUInteger const SheepPoints = 100;
   
   float time = 2;
   
+  CGPoint penPoint = ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2);
+  
+
+  // Rotate to look at the pen
+  id rotate = [CCRotateTo actionWithDuration:0.2 angle:CC_RADIANS_TO_DEGREES(atan2(fabs(penPoint.x - self.position.x),fabs(penPoint.y - self.position.y)))];
+  
   // Scale up and back to original over the time it takes to get back to pen
   id scaleUp = [CCScaleTo actionWithDuration:time/2 scale:1.5];
   id scaleDown = [CCScaleTo actionWithDuration:time/2 scale:1];
-  id scale = [CCSequence actionWithArray:@[scaleUp, scaleDown]];
+  id scale = [CCSequence actionWithArray:@[rotate, scaleUp, scaleDown]];
   
   // Move to pen
-  id moveTo = [CCMoveTo actionWithDuration:time position: ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2)];
+  id moveTo = [CCMoveTo actionWithDuration:time position: penPoint];
   
   // Scale and move at the same time
   id spawnAction = [CCSpawn actionWithArray:@[scale, moveTo]];
