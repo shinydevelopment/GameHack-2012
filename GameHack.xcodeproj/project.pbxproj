@@ -147,6 +147,7 @@
 		55DABF0915AF8925009BBAB8 /* Wolf1.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF0115AF8925009BBAB8 /* Wolf1.png */; };
 		55DABF0A15AF8925009BBAB8 /* Wolf2-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF0215AF8925009BBAB8 /* Wolf2-ipadhd.png */; };
 		55DABF0B15AF8925009BBAB8 /* Wolf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF0315AF8925009BBAB8 /* Wolf2.png */; };
+		F62A50C615AF8FF500CC4A9E /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F62A50C515AF8FF500CC4A9E /* GameManager.m */; };
 		F677D14315AF6300008A7F68 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13B15AF6300008A7F68 /* GameLayer.m */; };
 		F677D14415AF6300008A7F68 /* EntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13C15AF6300008A7F68 /* EntityLayer.m */; };
 		F677D14515AF6300008A7F68 /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14015AF6300008A7F68 /* HudLayer.m */; };
@@ -435,6 +436,8 @@
 		55DABF0115AF8925009BBAB8 /* Wolf1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolf1.png; sourceTree = "<group>"; };
 		55DABF0215AF8925009BBAB8 /* Wolf2-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wolf2-ipadhd.png"; sourceTree = "<group>"; };
 		55DABF0315AF8925009BBAB8 /* Wolf2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolf2.png; sourceTree = "<group>"; };
+		F62A50C415AF8FF500CC4A9E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		F62A50C515AF8FF500CC4A9E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		F677D13B15AF6300008A7F68 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		F677D13C15AF6300008A7F68 /* EntityLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityLayer.m; sourceTree = "<group>"; };
 		F677D13D15AF6300008A7F68 /* EntityLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityLayer.h; sourceTree = "<group>"; };
@@ -477,6 +480,8 @@
 				3721EE9D15AF42BF00AB0682 /* Sheep.m */,
 				3721EE9F15AF42DF00AB0682 /* Wolf.h */,
 				3721EEA015AF42DF00AB0682 /* Wolf.m */,
+				F62A50C415AF8FF500CC4A9E /* GameManager.h */,
+				F62A50C515AF8FF500CC4A9E /* GameManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1133,6 +1138,7 @@
 				F677D14415AF6300008A7F68 /* EntityLayer.m in Sources */,
 				F677D14515AF6300008A7F68 /* HudLayer.m in Sources */,
 				F677D14615AF6300008A7F68 /* DecorationLayer.m in Sources */,
+				F62A50C615AF8FF500CC4A9E /* GameManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

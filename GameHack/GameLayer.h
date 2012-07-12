@@ -14,15 +14,10 @@
 
 @interface GameLayer : CCLayer
 
-@property (nonatomic) int score;
-@property (nonatomic) int livesLeft;
 @property (nonatomic, strong) HudLayer *hudLayer;
 @property (nonatomic, strong) EntityLayer *entityLayer;
 @property (nonatomic, strong) DecorationLayer *decorationLayer;
 
 + (CCScene*)scene;
-
-- (void)livesLost:(int)numberLivesLost;
-- (void)updateScore:(int)points;
 
 @end
