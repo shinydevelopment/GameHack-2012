@@ -7,6 +7,7 @@
 //
 
 #import "EntityLayer.h"
+#import "Sheep.h"
 
 @implementation EntityLayer
 
@@ -14,9 +15,16 @@
 {
     self = [super init];
     if (self) {
+        CGSize size = self.contentSize;
+      
         _lastSheepRelease = -1;
         _sheepDelay = 3;
         
+      // Add a sheep
+      Sheep *sheep = [[Sheep alloc] init];
+      sheep.position = ccp( size.width /2 , size.height/2 );
+      [self addChild:sheep];
+      
         [self scheduleUpdate];
     }
     return self;
