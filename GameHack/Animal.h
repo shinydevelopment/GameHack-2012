@@ -16,8 +16,10 @@ typedef NSInteger AnimalStates;
 @property (readonly) NSUInteger points;
 
 - (void)walkPath:(NSArray*)pathArray;
+- (NSMutableArray *)actionsForPath:(NSArray *)pathPoints withLoop:(BOOL)loops;
 
 // whether or not it will receive Touch events. You can enable / disable touch events with this property. Only the touches of this node will be affected. This “method” is not propagated to its children.
 @property (assign) BOOL touchEnabled;
+
 
 @end
