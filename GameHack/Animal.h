@@ -1,5 +1,6 @@
 #import "CCNode.h"
 #import "CCSprite.h"
+#import "CCTouchDelegateProtocol.h"
 
 enum {
   AnimalStateNone,
@@ -7,7 +8,7 @@ enum {
 };
 typedef NSInteger AnimalStates;
 
-@interface Animal : CCNode
+@interface Animal : CCNode <CCTargetedTouchDelegate>
 
 @property (strong) CCSprite *sprite;
 @property (assign) AnimalStates *state;
