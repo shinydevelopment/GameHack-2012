@@ -7,6 +7,7 @@
 //
 
 #import "HudLayer.h"
+#import "GameManager.h"
 
 @implementation HudLayer
 
@@ -25,8 +26,23 @@
         _livesLabel.position = ccp(size.width - 100, size.height - 100);
         _livesLabel.color = ccc3(255, 255, 255);
         [self addChild:_livesLabel];
+        
+        [[GameManager sharedInstance] addObserver:self forKeyPath:@"score" options:NSKeyValueObservingOptionNew context:NULL];
+        
+        [[GameManager sharedInstance] addObserver:self forKeyPath:@"livesLeft" options:NSKeyValueObservingOptionNew context:NULL];
     }
     return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"score"]) {
+        [self updateScoreLabelWithScore:[change[@"new"] intValue]];
+    }
+    
+    if ([keyPath isEqualToString:@"livesLeft"]) {
+        [self updateLivesLabelWithLives:[change[@"new"] intValue]];
+    }
 }
 
 - (void)updateScoreLabelWithScore:(int)score

@@ -7,6 +7,7 @@
 //
 
 #import "GameLayer.h"
+#import "GameManager.h"
 
 @implementation GameLayer
 
@@ -32,9 +33,6 @@
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        _livesLeft = 5;
-        _score = 0;
-        
         _decorationLayer = [[DecorationLayer alloc] init];
         _decorationLayer.contentSize = size;
         _decorationLayer.position = self.position;
@@ -50,39 +48,9 @@
         _hudLayer.position = self.position;
         [self addChild:_hudLayer];
         
-        //self.isTouchEnabled = YES;
+        [[GameManager sharedInstance] newGame];
     }
     return self;
-}
-/*
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
-    
-    CGPoint touchLoc = [touch locationInView:[touch view]];
-    
-    touchLoc = [[CCDirector sharedDirector] convertToGL:touchLoc];
-    
-    NSLog(@"Touch %f, %f", touchLoc.x, touchLoc.y);
-    
-    [self updateScore:10];
-}
-*/
-- (void)livesLost:(int)numberLivesLost
-{
-    _livesLeft -= numberLivesLost;
-    [_hudLayer updateLivesLabelWithLives:_livesLeft];
-    
-    if (_livesLeft == 0) {
-        [[CCDirector sharedDirector] pause];
-        CCLOG(@"Game over");
-    }
-}
-
-- (void)updateScore:(int)points
-{
-    _score += points;
-    [_hudLayer updateScoreLabelWithScore:_score];
 }
 
 @end
