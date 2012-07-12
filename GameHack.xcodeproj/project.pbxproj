@@ -435,6 +435,8 @@
 		3721EE9715AF425F00AB0682 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				55B8933C15AF48B900E1F30B /* PathManager.h */,
+				55B8933D15AF48B900E1F30B /* PathManager.m */,
 				3721EE9915AF428D00AB0682 /* Animal.h */,
 				3721EE9A15AF428D00AB0682 /* Animal.m */,
 				3721EE9C15AF42BF00AB0682 /* Sheep.h */,
@@ -491,8 +493,6 @@
 				377C82A215AF3DCE00743C74 /* Resources */,
 				377C82BC15AF3DCE00743C74 /* libs */,
 				377C841515AF3DD100743C74 /* Supporting Files */,
-				55B8933C15AF48B900E1F30B /* PathManager.h */,
-				55B8933D15AF48B900E1F30B /* PathManager.m */,
 			);
 			path = GameHack;
 			sourceTree = "<group>";
