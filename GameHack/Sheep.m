@@ -49,10 +49,12 @@ NSUInteger const SheepPoints = 100;
   // nothing in animal classes, subclasses implement
   NSLog(@"Baaaa, I was touched");
   
-  float time = 2;
-  
+
   CGPoint penPoint = ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2);
-  
+ 
+  CGFloat distanceToCenter = ccpDistance(penPoint, self.position) / ccpDistance(penPoint, CGPointZero);
+  // Takes two seconds from the very edge of the screen.  Faster if closer.
+  CGFloat time = 2.0 * distanceToCenter;
 
   // Rotate to look at the pen
   id rotate = [CCRotateTo actionWithDuration:0.2 angle:CC_RADIANS_TO_DEGREES(atan2(penPoint.x - self.position.x,penPoint.y - self.position.y))];
