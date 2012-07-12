@@ -1,6 +1,4 @@
-#import "CCNode.h"
-#import "CCSprite.h"
-#import "CCTouchDelegateProtocol.h"
+#import "cocos2d.h"
 
 enum {
   AnimalStateNone,
