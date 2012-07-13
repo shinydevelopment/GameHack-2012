@@ -12,6 +12,7 @@
 
 @property (nonatomic) int score;
 @property (nonatomic) int livesLeft;
+@property (nonatomic) float difficulty;
 
 - (void)newGame;
 

@@ -1,5 +1,4 @@
 #import "Sheep.h"
-#import "GameManager.h"
 
 NSUInteger const SheepPoints = 100;
 
@@ -83,6 +82,8 @@ NSUInteger const SheepPoints = 100;
 {
   self.state = AnimalStateInPen;
   NSLog(@"Baaa, I'm stuck in a pen");
+    
+    [[GameManager sharedInstance] updateScore:self.points];
 }
 
 

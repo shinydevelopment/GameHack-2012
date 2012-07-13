@@ -7,7 +7,6 @@
 //
 
 #import "GameLayer.h"
-#import "GameManager.h"
 
 @implementation GameLayer
 
