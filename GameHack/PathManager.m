@@ -16,10 +16,22 @@
   return self;
 }
 
-- (NSArray *)arrayWithWaypoints
+- (NSArray *)arrayWithGameWaypoints
 {
   NSInteger randomIndex = arc4random() % [self.paths count];
   return self.paths[randomIndex];
+}
+
+- (NSArray *)arrayWithPaddockWaypoints
+{
+  return @[[NSValue valueWithCGPoint:CGPointMake(597.5, 469.5)],
+  [NSValue valueWithCGPoint:CGPointMake(412.5, 455.5)],
+  [NSValue valueWithCGPoint:CGPointMake(375.5, 376.5)],
+  [NSValue valueWithCGPoint:CGPointMake(435.5, 309.5)],
+  [NSValue valueWithCGPoint:CGPointMake(519.5, 332.5)],
+  [NSValue valueWithCGPoint:CGPointMake(618.5, 309.5)],
+  [NSValue valueWithCGPoint:CGPointMake(629.5, 396.5)],
+  [NSValue valueWithCGPoint:CGPointMake(597.5, 469.5)]];
 }
 
 - (void)populateWaypointArrays

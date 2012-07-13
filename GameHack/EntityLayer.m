@@ -101,7 +101,7 @@
     _lastSheepRelease = CACurrentMediaTime();
     CCLOG(@"Emit sheep");
     
-    NSArray *randomPath = [[PathManager sharedInstance] arrayWithWaypoints];
+    NSArray *randomPath = [[PathManager sharedInstance] arrayWithGameWaypoints];
     
     Sheep *mySheep = [[[Sheep alloc] init] autorelease];
     [self addChild:mySheep];

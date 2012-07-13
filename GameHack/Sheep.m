@@ -88,7 +88,7 @@ NSUInteger const SheepPoints = 100;
 - (void)walkPenPath
 {
   
-  NSArray *pathArray = [[PathManager sharedInstance] arrayWithWaypoints];
+  NSArray *pathArray = [[PathManager sharedInstance] arrayWithGameWaypoints];
   
   NSMutableArray *actions = [self actionsForPath:pathArray withLoop:YES];
     

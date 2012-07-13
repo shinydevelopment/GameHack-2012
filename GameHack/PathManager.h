@@ -1,6 +1,7 @@
 @interface PathManager : NSObject
 
-- (NSArray *)arrayWithWaypoints;
+- (NSArray *)arrayWithGameWaypoints;
+- (NSArray *)arrayWithPaddockWaypoints;
 
 + (PathManager *)sharedInstance;
 
