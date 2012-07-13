@@ -147,12 +147,13 @@
 		55DABF0915AF8925009BBAB8 /* Wolf1.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF0115AF8925009BBAB8 /* Wolf1.png */; };
 		55DABF0A15AF8925009BBAB8 /* Wolf2-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF0215AF8925009BBAB8 /* Wolf2-ipadhd.png */; };
 		55DABF0B15AF8925009BBAB8 /* Wolf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF0315AF8925009BBAB8 /* Wolf2.png */; };
+		55DABF1715AF9B65009BBAB8 /* Background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF1515AF9B65009BBAB8 /* Background-ipadhd.png */; };
+		55DABF1815AF9B65009BBAB8 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF1615AF9B65009BBAB8 /* Background.png */; };
 		F62A50C615AF8FF500CC4A9E /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F62A50C515AF8FF500CC4A9E /* GameManager.m */; };
 		F677D14315AF6300008A7F68 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13B15AF6300008A7F68 /* GameLayer.m */; };
 		F677D14415AF6300008A7F68 /* EntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13C15AF6300008A7F68 /* EntityLayer.m */; };
 		F677D14515AF6300008A7F68 /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14015AF6300008A7F68 /* HudLayer.m */; };
 		F677D14615AF6300008A7F68 /* DecorationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14215AF6300008A7F68 /* DecorationLayer.m */; };
-		F677D14815AF630F008A7F68 /* gameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F677D14715AF630F008A7F68 /* gameBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -436,6 +437,8 @@
 		55DABF0115AF8925009BBAB8 /* Wolf1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolf1.png; sourceTree = "<group>"; };
 		55DABF0215AF8925009BBAB8 /* Wolf2-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wolf2-ipadhd.png"; sourceTree = "<group>"; };
 		55DABF0315AF8925009BBAB8 /* Wolf2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolf2.png; sourceTree = "<group>"; };
+		55DABF1515AF9B65009BBAB8 /* Background-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-ipadhd.png"; sourceTree = "<group>"; };
+		55DABF1615AF9B65009BBAB8 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		F62A50C415AF8FF500CC4A9E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		F62A50C515AF8FF500CC4A9E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		F677D13B15AF6300008A7F68 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
@@ -446,7 +449,6 @@
 		F677D14015AF6300008A7F68 /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
 		F677D14115AF6300008A7F68 /* DecorationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationLayer.h; sourceTree = "<group>"; };
 		F677D14215AF6300008A7F68 /* DecorationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationLayer.m; sourceTree = "<group>"; };
-		F677D14715AF630F008A7F68 /* gameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameBackground.png; path = Resources/gameBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,7 +543,6 @@
 		377C82A215AF3DCE00743C74 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F677D14715AF630F008A7F68 /* gameBackground.png */,
 				377C82A315AF3DCE00743C74 /* Default.png */,
 				377C82A515AF3DCE00743C74 /* Default-Landscape~ipad.png */,
 				377C82A715AF3DCE00743C74 /* fps_images.png */,
@@ -913,6 +914,8 @@
 		5557986615AF6B7000B72C04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				55DABF1515AF9B65009BBAB8 /* Background-ipadhd.png */,
+				55DABF1615AF9B65009BBAB8 /* Background.png */,
 				55DABEFC15AF8925009BBAB8 /* GameOver-ipadhd.png */,
 				55DABEFD15AF8925009BBAB8 /* GameOver.png */,
 				55DABEFE15AF8925009BBAB8 /* Paddock-ipadhd.png */,
@@ -1005,7 +1008,6 @@
 				377C82B815AF3DCE00743C74 /* Icon@2x.png in Resources */,
 				377C82BB15AF3DCE00743C74 /* iTunesArtwork in Resources */,
 				377C83F915AF3DD000743C74 /* ChangeLog in Resources */,
-				F677D14815AF630F008A7F68 /* gameBackground.png in Resources */,
 				5557986915AF6B9800B72C04 /* Sheep-ipadhd.png in Resources */,
 				5557986A15AF6B9800B72C04 /* Sheep.png in Resources */,
 				55DABF0415AF8925009BBAB8 /* GameOver-ipadhd.png in Resources */,
@@ -1016,6 +1018,8 @@
 				55DABF0915AF8925009BBAB8 /* Wolf1.png in Resources */,
 				55DABF0A15AF8925009BBAB8 /* Wolf2-ipadhd.png in Resources */,
 				55DABF0B15AF8925009BBAB8 /* Wolf2.png in Resources */,
+				55DABF1715AF9B65009BBAB8 /* Background-ipadhd.png in Resources */,
+				55DABF1815AF9B65009BBAB8 /* Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

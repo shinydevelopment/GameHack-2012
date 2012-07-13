@@ -18,7 +18,7 @@
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CCSprite *bgImage = [CCSprite spriteWithFile:@"gameBackground.png"];
+        CCSprite *bgImage = [CCSprite spriteWithFile:@"Background.png"];
         bgImage.position = ccp(size.width * 0.5, size.height * 0.5);
         [self addChild:bgImage];
     }
