@@ -9,6 +9,7 @@
 #import "EntityLayer.h"
 #import "Sheep.h"
 #import "Wolf.h"
+#import "GoldenSheep.h"
 #import "PathManager.h"
 
 @implementation EntityLayer
@@ -19,6 +20,8 @@
     if (self) {
         _lastSheepRelease = -1;
         _sheepDelay = 3;
+        _goldenSheepDelay = 15;
+        _lastGoldenSheepRelease = 10;
         
         [self scheduleUpdate];
       
@@ -48,6 +51,17 @@
     
     if (timeSinceLastSheep >= self.sheepDelay) {
         [self emitRandomAnimals];
+    }
+    
+    if (self.lastGoldenSheepRelease < 0) {
+        [self emitGoldenSheep];
+        return;
+    }
+    
+    ccTime timeSinceLastGoldenSheep = CACurrentMediaTime() - self.lastGoldenSheepRelease;
+    
+    if (timeSinceLastGoldenSheep >= self.goldenSheepDelay) {
+        [self emitGoldenSheep];
     }
 }
 
@@ -113,6 +127,18 @@
     for (int i=0; i<wolves; i++) {
       [self emitWolf];
     }
+}
+
+- (void)emitGoldenSheep
+{
+    self.lastGoldenSheepRelease = CACurrentMediaTime();
+    CCLOG(@"Emit GOLDEN SHEEP!");
+    
+    NSArray *randomPath = [[PathManager sharedInstance] arrayWithGameWaypoints];
+    
+    GoldenSheep *mySheep = [[[GoldenSheep alloc] init] autorelease];
+    [self addChild:mySheep];
+    [mySheep walkPath:randomPath];
 }
 
 - (void)emitSheep

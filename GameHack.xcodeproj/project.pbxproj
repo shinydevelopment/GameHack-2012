@@ -150,10 +150,14 @@
 		55DABF1715AF9B65009BBAB8 /* Background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF1515AF9B65009BBAB8 /* Background-ipadhd.png */; };
 		55DABF1815AF9B65009BBAB8 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 55DABF1615AF9B65009BBAB8 /* Background.png */; };
 		F62A50C615AF8FF500CC4A9E /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F62A50C515AF8FF500CC4A9E /* GameManager.m */; };
+		F62A50D615AFC05500CC4A9E /* ScoreUpdateLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F62A50D515AFC05500CC4A9E /* ScoreUpdateLabel.m */; };
 		F677D14315AF6300008A7F68 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13B15AF6300008A7F68 /* GameLayer.m */; };
 		F677D14415AF6300008A7F68 /* EntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13C15AF6300008A7F68 /* EntityLayer.m */; };
 		F677D14515AF6300008A7F68 /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14015AF6300008A7F68 /* HudLayer.m */; };
 		F677D14615AF6300008A7F68 /* DecorationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14215AF6300008A7F68 /* DecorationLayer.m */; };
+		F6BE981415AFC913003D1375 /* Golden-Sheep.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE981215AFC913003D1375 /* Golden-Sheep.png */; };
+		F6BE981515AFC913003D1375 /* Golden-Sheep-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE981315AFC913003D1375 /* Golden-Sheep-ipadhd.png */; };
+		F6BE981915AFC941003D1375 /* GoldenSheep.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BE981815AFC941003D1375 /* GoldenSheep.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -441,6 +445,8 @@
 		55DABF1615AF9B65009BBAB8 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		F62A50C415AF8FF500CC4A9E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		F62A50C515AF8FF500CC4A9E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		F62A50D415AFC05500CC4A9E /* ScoreUpdateLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreUpdateLabel.h; sourceTree = "<group>"; };
+		F62A50D515AFC05500CC4A9E /* ScoreUpdateLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreUpdateLabel.m; sourceTree = "<group>"; };
 		F677D13B15AF6300008A7F68 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		F677D13C15AF6300008A7F68 /* EntityLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityLayer.m; sourceTree = "<group>"; };
 		F677D13D15AF6300008A7F68 /* EntityLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityLayer.h; sourceTree = "<group>"; };
@@ -449,6 +455,10 @@
 		F677D14015AF6300008A7F68 /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
 		F677D14115AF6300008A7F68 /* DecorationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationLayer.h; sourceTree = "<group>"; };
 		F677D14215AF6300008A7F68 /* DecorationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationLayer.m; sourceTree = "<group>"; };
+		F6BE981215AFC913003D1375 /* Golden-Sheep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Golden-Sheep.png"; sourceTree = "<group>"; };
+		F6BE981315AFC913003D1375 /* Golden-Sheep-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Golden-Sheep-ipadhd.png"; sourceTree = "<group>"; };
+		F6BE981715AFC941003D1375 /* GoldenSheep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoldenSheep.h; sourceTree = "<group>"; };
+		F6BE981815AFC941003D1375 /* GoldenSheep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoldenSheep.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,6 +494,10 @@
 				3721EEA015AF42DF00AB0682 /* Wolf.m */,
 				F62A50C415AF8FF500CC4A9E /* GameManager.h */,
 				F62A50C515AF8FF500CC4A9E /* GameManager.m */,
+				F62A50D415AFC05500CC4A9E /* ScoreUpdateLabel.h */,
+				F62A50D515AFC05500CC4A9E /* ScoreUpdateLabel.m */,
+				F6BE981715AFC941003D1375 /* GoldenSheep.h */,
+				F6BE981815AFC941003D1375 /* GoldenSheep.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -915,6 +929,8 @@
 		5557986615AF6B7000B72C04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F6BE981215AFC913003D1375 /* Golden-Sheep.png */,
+				F6BE981315AFC913003D1375 /* Golden-Sheep-ipadhd.png */,
 				55DABF1515AF9B65009BBAB8 /* Background-ipadhd.png */,
 				55DABF1615AF9B65009BBAB8 /* Background.png */,
 				55DABEFC15AF8925009BBAB8 /* GameOver-ipadhd.png */,
@@ -1028,6 +1044,8 @@
 				55DABF0B15AF8925009BBAB8 /* Wolf2.png in Resources */,
 				55DABF1715AF9B65009BBAB8 /* Background-ipadhd.png in Resources */,
 				55DABF1815AF9B65009BBAB8 /* Background.png in Resources */,
+				F6BE981415AFC913003D1375 /* Golden-Sheep.png in Resources */,
+				F6BE981515AFC913003D1375 /* Golden-Sheep-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,6 +1169,8 @@
 				F677D14515AF6300008A7F68 /* HudLayer.m in Sources */,
 				F677D14615AF6300008A7F68 /* DecorationLayer.m in Sources */,
 				F62A50C615AF8FF500CC4A9E /* GameManager.m in Sources */,
+				F62A50D615AFC05500CC4A9E /* ScoreUpdateLabel.m in Sources */,
+				F6BE981915AFC941003D1375 /* GoldenSheep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

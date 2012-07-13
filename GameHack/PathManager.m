@@ -18,7 +18,13 @@
 
 - (NSArray *)arrayWithGameWaypoints
 {
-  NSInteger randomIndex = arc4random() % [self.paths count];
+    int randomIndex = self.lastPathIndex;
+    
+    while (randomIndex == self.lastPathIndex) {
+        randomIndex = arc4random() % [self.paths count];
+    }
+    
+    self.lastPathIndex = randomIndex;
   return self.paths[randomIndex];
 }
 
