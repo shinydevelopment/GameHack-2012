@@ -12,7 +12,7 @@ NSUInteger const SheepPoints = 100;
   if (self) {
     // Load sheep sprite
     self.sprite = [CCSprite spriteWithFile:@"Sheep.png"];
-      
+    self.livesLostOnEscape = 1;
     [self addChild:self.sprite];
   }
   return self;

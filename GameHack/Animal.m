@@ -103,7 +103,7 @@
     id arrived = [CCCallBlock actionWithBlock:^{
       NSLog(@"Baaaaa! Made it! Phew!");
       [self removeFromParentAndCleanup:YES];
-        [[GameManager sharedInstance] updateLives:1];
+        [[GameManager sharedInstance] updateLives:self.livesLostOnEscape];
     }];
     
     [actions addObject:arrived];
