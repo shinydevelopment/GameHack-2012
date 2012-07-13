@@ -163,6 +163,11 @@
 		F6BE982615AFE131003D1375 /* explosionEmitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982515AFE131003D1375 /* explosionEmitter.plist */; };
 		F6BE982815AFE252003D1375 /* particleTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982715AFE252003D1375 /* particleTexture.png */; };
 		F6BE982A15AFE453003D1375 /* bloodSplatter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982915AFE453003D1375 /* bloodSplatter.plist */; };
+		F6BE982D15AFEAF9003D1375 /* AccessoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BE982C15AFEAF9003D1375 /* AccessoryLayer.m */; };
+		F6BE983215AFEEF6003D1375 /* tree1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982E15AFEEF6003D1375 /* tree1.png */; };
+		F6BE983315AFEEF6003D1375 /* tree1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982F15AFEEF6003D1375 /* tree1-hd.png */; };
+		F6BE983415AFEEF6003D1375 /* tree2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE983015AFEEF6003D1375 /* tree2.png */; };
+		F6BE983515AFEEF6003D1375 /* tree2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE983115AFEEF6003D1375 /* tree2-hd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -469,6 +474,12 @@
 		F6BE982515AFE131003D1375 /* explosionEmitter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explosionEmitter.plist; sourceTree = "<group>"; };
 		F6BE982715AFE252003D1375 /* particleTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTexture.png; sourceTree = "<group>"; };
 		F6BE982915AFE453003D1375 /* bloodSplatter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bloodSplatter.plist; sourceTree = "<group>"; };
+		F6BE982B15AFEAF9003D1375 /* AccessoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryLayer.h; sourceTree = "<group>"; };
+		F6BE982C15AFEAF9003D1375 /* AccessoryLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessoryLayer.m; sourceTree = "<group>"; };
+		F6BE982E15AFEEF6003D1375 /* tree1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree1.png; sourceTree = "<group>"; };
+		F6BE982F15AFEEF6003D1375 /* tree1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree1-hd.png"; sourceTree = "<group>"; };
+		F6BE983015AFEEF6003D1375 /* tree2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree2.png; sourceTree = "<group>"; };
+		F6BE983115AFEEF6003D1375 /* tree2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree2-hd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -940,6 +951,10 @@
 		5557986615AF6B7000B72C04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F6BE982E15AFEEF6003D1375 /* tree1.png */,
+				F6BE982F15AFEEF6003D1375 /* tree1-hd.png */,
+				F6BE983015AFEEF6003D1375 /* tree2.png */,
+				F6BE983115AFEEF6003D1375 /* tree2-hd.png */,
 				F6BE981A15AFD511003D1375 /* Start.png */,
 				F6BE981B15AFD511003D1375 /* Start-ipadhd.png */,
 				F6BE981215AFC913003D1375 /* Golden-Sheep.png */,
@@ -978,6 +993,8 @@
 				F677D13F15AF6300008A7F68 /* HudLayer.h */,
 				F677D14215AF6300008A7F68 /* DecorationLayer.m */,
 				F677D14115AF6300008A7F68 /* DecorationLayer.h */,
+				F6BE982B15AFEAF9003D1375 /* AccessoryLayer.h */,
+				F6BE982C15AFEAF9003D1375 /* AccessoryLayer.m */,
 			);
 			name = "Game Scene";
 			sourceTree = "<group>";
@@ -1074,6 +1091,10 @@
 				F6BE982615AFE131003D1375 /* explosionEmitter.plist in Resources */,
 				F6BE982815AFE252003D1375 /* particleTexture.png in Resources */,
 				F6BE982A15AFE453003D1375 /* bloodSplatter.plist in Resources */,
+				F6BE983215AFEEF6003D1375 /* tree1.png in Resources */,
+				F6BE983315AFEEF6003D1375 /* tree1-hd.png in Resources */,
+				F6BE983415AFEEF6003D1375 /* tree2.png in Resources */,
+				F6BE983515AFEEF6003D1375 /* tree2-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1199,6 +1220,7 @@
 				F62A50C615AF8FF500CC4A9E /* GameManager.m in Sources */,
 				F62A50D615AFC05500CC4A9E /* ScoreUpdateLabel.m in Sources */,
 				F6BE981915AFC941003D1375 /* GoldenSheep.m in Sources */,
+				F6BE982D15AFEAF9003D1375 /* AccessoryLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

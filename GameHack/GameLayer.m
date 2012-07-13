@@ -42,6 +42,11 @@
         _entityLayer.position = self.position;
         [self addChild:_entityLayer];
         
+        _accessoryLayer = [[AccessoryLayer alloc] init];
+        _accessoryLayer.contentSize = size;
+        _accessoryLayer.position = self.position;
+        [self addChild:_accessoryLayer];
+        
         _hudLayer = [[HudLayer alloc] init];
         _hudLayer.contentSize = size;
         _hudLayer.position = self.position;
@@ -97,13 +102,14 @@
     
     [self.entityLayer removeAllChildrenWithCleanup:YES];
     
-    [self.entityLayer addChild:gameOverSprite];
+    [self.accessoryLayer addChild:gameOverSprite];
+    gameOverSprite.tag = 99;
     [gameOverSprite runAction:endSequence];
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [_entityLayer removeAllChildrenWithCleanup:YES];
+    [self.accessoryLayer removeChildByTag:99 cleanup:YES];
     
     [[GameManager sharedInstance] newGame];
     
@@ -159,7 +165,8 @@
     
     [self.entityLayer removeAllChildrenWithCleanup:YES];
     
-    [self.entityLayer addChild:gameOverSprite];
+    [self.accessoryLayer addChild:gameOverSprite];
+    gameOverSprite.tag = 99;
     [gameOverSprite runAction:endSequence];
 }
 

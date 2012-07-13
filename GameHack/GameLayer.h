@@ -11,10 +11,12 @@
 #import "HudLayer.h"
 #import "DecorationLayer.h"
 #import "EntityLayer.h"
+#import "AccessoryLayer.h"
 
 @interface GameLayer : CCLayer
 
 @property (nonatomic, strong) HudLayer *hudLayer;
+@property (nonatomic, strong) AccessoryLayer *accessoryLayer;
 @property (nonatomic, strong) EntityLayer *entityLayer;
 @property (nonatomic, strong) DecorationLayer *decorationLayer;
 
