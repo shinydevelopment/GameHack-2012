@@ -12,12 +12,16 @@
 @interface EntityLayer : CCLayer
 
 @property (nonatomic) ccTime lastSheepRelease;
-@property (nonatomic) double sheepDelay;
-@property (nonatomic) double goldenSheepDelay;
+@property (nonatomic) ccTime lastWolfRelease;
 @property (nonatomic) ccTime lastGoldenSheepRelease;
+@property (nonatomic) double sheepDelay;
+@property (nonatomic) double wolfDelay;
+@property (nonatomic) double goldenSheepDelay;
 
+
+- (void)emitWolf;
 - (void)emitSheep;
 - (void)emitGoldenSheep;
-- (void)emitRandomAnimals;
+- (void)emitRandomNumberOfSheep;
 
 @end

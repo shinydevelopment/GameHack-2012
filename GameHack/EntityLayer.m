@@ -21,7 +21,9 @@
         _lastSheepRelease = -1;
         _sheepDelay = 3;
         _goldenSheepDelay = 15;
-        _lastGoldenSheepRelease = 10;
+        // Don't release in first 10 seconds
+        _lastGoldenSheepRelease = CACurrentMediaTime() + 10;
+        _lastWolfRelease = CACurrentMediaTime() + 10;
         
         [self scheduleUpdate];
       
@@ -50,19 +52,46 @@
     ccTime timeSinceLastSheep = CACurrentMediaTime() - _lastSheepRelease;
     
     if (timeSinceLastSheep >= self.sheepDelay) {
-        [self emitRandomAnimals];
-    }
-    
-    if (self.lastGoldenSheepRelease < 0) {
-        [self emitGoldenSheep];
-        return;
+        [self emitRandomNumberOfSheep];
     }
     
     ccTime timeSinceLastGoldenSheep = CACurrentMediaTime() - self.lastGoldenSheepRelease;
-    
     if (timeSinceLastGoldenSheep >= self.goldenSheepDelay) {
         [self emitGoldenSheep];
     }
+  
+    ccTime timeSinceLastWolf = CACurrentMediaTime() - self.lastWolfRelease;
+    if (timeSinceLastWolf >= self.wolfDelay) {
+      [self emitWolf];
+    }
+
+}
+
+- (double)wolfDelay
+{
+  // Let them get comfortable with catching sheep, no wolves at the start.
+  // False sense of security. mwhahaha
+  float difficulty = [GameManager sharedInstance].difficulty;
+  
+  float max, min;
+  
+  if (difficulty < 30) {
+    max = 20;
+    min = 10;
+  } else if (difficulty < 60) {
+    max = 15;
+    min = 7;
+  } else if (difficulty < 90) {
+    max = 8;
+    min = 3;
+  } else {
+    max = 4;
+    min = 2;
+  }
+  
+  double rand = arc4random()%1000/1000.0;
+  
+  return rand * (max-min) + min;
 }
 
 - (double)sheepDelay
@@ -90,30 +119,24 @@
     return rand * (max-min) + min;
 }
 
-- (void)emitRandomAnimals
+- (void)emitRandomNumberOfSheep
 {
     float difficulty = [GameManager sharedInstance].difficulty;
     
-    float max, min, wolves;
+    float max, min;
     
     if (difficulty < 10) {
         max = 1;
         min = 1;
-        // Let them get comfortable with catching sheep, no wolves at the start.
-        // False sense of security. mwhahaha
-        wolves = 0;
     } else if (difficulty < 20) {
         max = 2;
         min = 1;
-        wolves = 1;
     } else if (difficulty < 35) {
         max = 3;
         min = 1;
-        wolves = 2;
     } else {
         max = 4;
         min = 2;
-        wolves = 2;
     }
     
     int diff = MAX(1, max - min);
@@ -122,10 +145,6 @@
     
     for (int i=0; i<rand; i++) {
         [self emitSheep];
-    }
-  
-    for (int i=0; i<wolves; i++) {
-      [self emitWolf];
     }
 }
 
@@ -155,6 +174,7 @@
 
 - (void)emitWolf
 {
+  _lastWolfRelease = CACurrentMediaTime();
   CCLOG(@"Emit wolf");
   
   NSArray *randomPath = [[PathManager sharedInstance] arrayWithGameWaypoints];
