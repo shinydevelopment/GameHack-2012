@@ -91,11 +91,17 @@ NSUInteger const SheepPoints = 100;
   NSArray *pathArray = [[PathManager sharedInstance] arrayWithGameWaypoints];
   
   NSMutableArray *actions = [self actionsForPath:pathArray withLoop:YES];
-    
-  id sequence = [CCSequence actionWithArray:actions];
   
-  // repeat forever
-  [self runAction:[CCRepeatForever actionWithAction:sequence]];
+  // Move to the first point in the path
+  CGPoint firstPoint = [pathArray[0] CGPointValue];
+  id rotation = [CCRotateTo actionWithDuration:0.3 angle:[self angleFromPoint:self.position to:firstPoint]];
+  id transform = [CCMoveTo actionWithDuration:1.0 position:firstPoint];
+  id moveToFirstPoint = [CCSequence actionWithArray:@[rotation, transform]];
+  
+  id repeatSequence = [CCRepeatForever actionWithAction:[CCSequence actionWithArray:actions]];
+  
+  // move then repeat forever
+  [self runAction:[CCSequence actionWithArray:@[moveToFirstPoint, repeatSequence]]];
 }
 
 
