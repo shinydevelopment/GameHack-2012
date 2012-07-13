@@ -133,10 +133,10 @@ NSUInteger const WolfPoints = 0;
   // Move to the first point in the path
   CGPoint firstPoint = [pathArray[0] CGPointValue];
   id rotation = [CCRotateTo actionWithDuration:0.3 angle:[self angleFromPoint:self.position to:firstPoint]];
-  id transform = [CCMoveTo actionWithDuration:1.0 position:firstPoint];
+  id transform = [CCMoveTo actionWithDuration:0.5 position:firstPoint];
   id moveToFirstPoint = [CCSequence actionWithArray:@[rotation, transform]];
   
-  // Have to do this as a block as we can't have repeat forever in a sequence
+  // Run around 3 times and eat three sheep
   id arrived = [CCCallBlock actionWithBlock:^{
     id repeatSequence = [CCRepeat actionWithAction:[CCSequence actionWithArray:actions] times:3];
     [self runAction:repeatSequence];

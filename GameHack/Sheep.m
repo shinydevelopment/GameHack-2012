@@ -18,6 +18,36 @@ NSUInteger const SheepPoints = 100;
   return self;
 }
 
+#pragma mark Class methods
++ (void)cullSheepInLayer:(CCLayer *)layer
+{
+  const NSInteger maxSheepInPen = 5;
+  NSMutableArray *caughtSheep = [NSMutableArray array];
+  Sheep *sheep;
+  for (CCNode *child in layer.children) {
+    if ([child isKindOfClass:[Sheep class]]) {
+      sheep = (Sheep *)child;
+      if (sheep.state == AnimalStateInPen) {
+        [caughtSheep addObject:sheep];
+      }
+    }
+  }
+  
+  if ([caughtSheep count] > maxSheepInPen) {
+    for (NSInteger killIndex=maxSheepInPen; killIndex < [caughtSheep count]; killIndex++) {
+      sheep = (Sheep *)caughtSheep[killIndex];
+      id fadeOut = [CCFadeOut actionWithDuration:1.5];
+      id remove = [CCCallBlock actionWithBlock:^{
+        [sheep removeFromParentAndCleanup:YES];
+      }];
+
+      [sheep.sprite runAction:[CCSequence actionWithArray:@[fadeOut, remove]]];
+    }
+  }
+  
+  NSLog(@"Culling some sheep");
+}
+
 #pragma mark Properties
 - (NSUInteger)points
 {
