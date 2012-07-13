@@ -167,8 +167,8 @@
 		F6BE983C15AFF0F9003D1375 /* AccessoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BE983A15AFF0F9003D1375 /* AccessoryLayer.m */; };
 		F6BE984215AFF107003D1375 /* tree1.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE983E15AFF107003D1375 /* tree1.png */; };
 		F6BE984315AFF107003D1375 /* tree2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE983F15AFF107003D1375 /* tree2.png */; };
-		F6BE984415AFF107003D1375 /* tree1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE984015AFF107003D1375 /* tree1-hd.png */; };
-		F6BE984515AFF107003D1375 /* tree2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE984115AFF107003D1375 /* tree2-hd.png */; };
+		F6BE984415AFF107003D1375 /* tree1-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE984015AFF107003D1375 /* tree1-ipadhd.png */; };
+		F6BE984515AFF107003D1375 /* tree2-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE984115AFF107003D1375 /* tree2-ipadhd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -480,8 +480,8 @@
 		F6BE983B15AFF0F9003D1375 /* AccessoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryLayer.h; sourceTree = "<group>"; };
 		F6BE983E15AFF107003D1375 /* tree1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree1.png; sourceTree = "<group>"; };
 		F6BE983F15AFF107003D1375 /* tree2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree2.png; sourceTree = "<group>"; };
-		F6BE984015AFF107003D1375 /* tree1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree1-hd.png"; sourceTree = "<group>"; };
-		F6BE984115AFF107003D1375 /* tree2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree2-hd.png"; sourceTree = "<group>"; };
+		F6BE984015AFF107003D1375 /* tree1-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree1-ipadhd.png"; sourceTree = "<group>"; };
+		F6BE984115AFF107003D1375 /* tree2-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree2-ipadhd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -955,8 +955,8 @@
 			children = (
 				F6BE983E15AFF107003D1375 /* tree1.png */,
 				F6BE983F15AFF107003D1375 /* tree2.png */,
-				F6BE984015AFF107003D1375 /* tree1-hd.png */,
-				F6BE984115AFF107003D1375 /* tree2-hd.png */,
+				F6BE984015AFF107003D1375 /* tree1-ipadhd.png */,
+				F6BE984115AFF107003D1375 /* tree2-ipadhd.png */,
 				F6BE981A15AFD511003D1375 /* Start.png */,
 				F6BE981B15AFD511003D1375 /* Start-ipadhd.png */,
 				F6BE981215AFC913003D1375 /* Golden-Sheep.png */,
@@ -1097,8 +1097,8 @@
 				3721EEED15AFEB5600AB0682 /* Background.mp3 in Resources */,
 				F6BE984215AFF107003D1375 /* tree1.png in Resources */,
 				F6BE984315AFF107003D1375 /* tree2.png in Resources */,
-				F6BE984415AFF107003D1375 /* tree1-hd.png in Resources */,
-				F6BE984515AFF107003D1375 /* tree2-hd.png in Resources */,
+				F6BE984415AFF107003D1375 /* tree1-ipadhd.png in Resources */,
+				F6BE984515AFF107003D1375 /* tree2-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
