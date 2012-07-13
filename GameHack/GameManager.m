@@ -13,8 +13,9 @@
 - (void)newGame
 {
     self.score = 0;
-    self.livesLeft = 5;
+    self.livesLeft = 1;
     self.difficulty = 0;
+    self.gameOver = NO;
 }
 
 - (void)updateScore:(int)points
@@ -22,9 +23,13 @@
     self.score += points;
 }
 
-- (void)updateLives:(int)livesLost
+- (void)lostLives:(int)lives
 {
-    self.livesLeft -= livesLost;
+    self.livesLeft -= lives;
+    
+    if (self.livesLeft <= 0) {
+        self.gameOver = YES;
+    }
 }
 
 #pragma mark Singleton methods

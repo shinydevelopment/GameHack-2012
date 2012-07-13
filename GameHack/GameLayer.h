@@ -20,4 +20,6 @@
 
 + (CCScene*)scene;
 
+- (void)gameOver;
+
 @end

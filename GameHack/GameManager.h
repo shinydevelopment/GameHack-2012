@@ -13,11 +13,12 @@
 @property (nonatomic) int score;
 @property (nonatomic) int livesLeft;
 @property (nonatomic) float difficulty;
+@property (nonatomic) BOOL gameOver;
 
 - (void)newGame;
 
 - (void)updateScore:(int)points;
-- (void)updateLives:(int)livesLost;
+- (void)lostLives:(int)lives;
 
 + (GameManager *)sharedInstance;
 

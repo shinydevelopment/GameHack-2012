@@ -16,8 +16,6 @@
 {
     self = [super init];
     if (self) {
-        //CGSize size = self.contentSize;
-      
         _lastSheepRelease = -1;
         _sheepDelay = 3;
         
