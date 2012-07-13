@@ -55,10 +55,19 @@ NSUInteger const GoldenSheepPoints = 500;
     [label runAction:sequence];
 }
 
+- (void)emitParticles
+{
+    CCParticleSystemQuad *emitter = [CCParticleSystemQuad particleWithFile:@"explosionEmitter.plist"];
+    emitter.position = self.position;
+    [self.parent addChild:emitter];
+}
+
 #pragma mark Touch methods
 - (void) wasTouched
 {
     [super wasTouched];
+    
+    [self emitParticles];
     
     // nothing in animal classes, subclasses implement
     NSLog(@"Baaaa, I was touched");

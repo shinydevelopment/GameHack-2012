@@ -158,6 +158,11 @@
 		F6BE981415AFC913003D1375 /* Golden-Sheep.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE981215AFC913003D1375 /* Golden-Sheep.png */; };
 		F6BE981515AFC913003D1375 /* Golden-Sheep-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE981315AFC913003D1375 /* Golden-Sheep-ipadhd.png */; };
 		F6BE981915AFC941003D1375 /* GoldenSheep.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BE981815AFC941003D1375 /* GoldenSheep.m */; };
+		F6BE981C15AFD511003D1375 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE981A15AFD511003D1375 /* Start.png */; };
+		F6BE981D15AFD511003D1375 /* Start-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE981B15AFD511003D1375 /* Start-ipadhd.png */; };
+		F6BE982615AFE131003D1375 /* explosionEmitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982515AFE131003D1375 /* explosionEmitter.plist */; };
+		F6BE982815AFE252003D1375 /* particleTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982715AFE252003D1375 /* particleTexture.png */; };
+		F6BE982A15AFE453003D1375 /* bloodSplatter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6BE982915AFE453003D1375 /* bloodSplatter.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -459,6 +464,11 @@
 		F6BE981315AFC913003D1375 /* Golden-Sheep-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Golden-Sheep-ipadhd.png"; sourceTree = "<group>"; };
 		F6BE981715AFC941003D1375 /* GoldenSheep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoldenSheep.h; sourceTree = "<group>"; };
 		F6BE981815AFC941003D1375 /* GoldenSheep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoldenSheep.m; sourceTree = "<group>"; };
+		F6BE981A15AFD511003D1375 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start.png; sourceTree = "<group>"; };
+		F6BE981B15AFD511003D1375 /* Start-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Start-ipadhd.png"; sourceTree = "<group>"; };
+		F6BE982515AFE131003D1375 /* explosionEmitter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explosionEmitter.plist; sourceTree = "<group>"; };
+		F6BE982715AFE252003D1375 /* particleTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTexture.png; sourceTree = "<group>"; };
+		F6BE982915AFE453003D1375 /* bloodSplatter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bloodSplatter.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -920,6 +930,7 @@
 		5557986415AF6B6700B72C04 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F6BE982015AFD90F003D1375 /* Particle Emitter */,
 				55BD312115AFA4EB00FC0BA2 /* Audio */,
 				5557986615AF6B7000B72C04 /* Images */,
 			);
@@ -929,6 +940,8 @@
 		5557986615AF6B7000B72C04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F6BE981A15AFD511003D1375 /* Start.png */,
+				F6BE981B15AFD511003D1375 /* Start-ipadhd.png */,
 				F6BE981215AFC913003D1375 /* Golden-Sheep.png */,
 				F6BE981315AFC913003D1375 /* Golden-Sheep-ipadhd.png */,
 				55DABF1515AF9B65009BBAB8 /* Background-ipadhd.png */,
@@ -967,6 +980,16 @@
 				F677D14115AF6300008A7F68 /* DecorationLayer.h */,
 			);
 			name = "Game Scene";
+			sourceTree = "<group>";
+		};
+		F6BE982015AFD90F003D1375 /* Particle Emitter */ = {
+			isa = PBXGroup;
+			children = (
+				F6BE982915AFE453003D1375 /* bloodSplatter.plist */,
+				F6BE982715AFE252003D1375 /* particleTexture.png */,
+				F6BE982515AFE131003D1375 /* explosionEmitter.plist */,
+			);
+			name = "Particle Emitter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1046,6 +1069,11 @@
 				55DABF1815AF9B65009BBAB8 /* Background.png in Resources */,
 				F6BE981415AFC913003D1375 /* Golden-Sheep.png in Resources */,
 				F6BE981515AFC913003D1375 /* Golden-Sheep-ipadhd.png in Resources */,
+				F6BE981C15AFD511003D1375 /* Start.png in Resources */,
+				F6BE981D15AFD511003D1375 /* Start-ipadhd.png in Resources */,
+				F6BE982615AFE131003D1375 /* explosionEmitter.plist in Resources */,
+				F6BE982815AFE252003D1375 /* particleTexture.png in Resources */,
+				F6BE982A15AFE453003D1375 /* bloodSplatter.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,8 +53,16 @@ NSUInteger const SheepPoints = 100;
 + (void)cullSheepInPenInLayer:(CCLayer *)layer
 {
   NSMutableArray *caughtSheep = [Sheep sheepInPenInlayer:layer];
-  [(Sheep *)[caughtSheep lastObject] cull];
+  [(Sheep *)[caughtSheep lastObject] die];
   NSLog(@"WOLF KILLED SHEEP!");
+}
+
+- (void)die
+{
+    CCParticleSystemQuad *emitter = [CCParticleSystemQuad particleWithFile:@"bloodSplatter.plist"];
+    emitter.position = self.position;
+    [self.parent addChild:emitter];
+    [self cull];
 }
 
 - (void)cull

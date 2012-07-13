@@ -24,8 +24,6 @@
         // Don't release in first 10 seconds
         _lastGoldenSheepRelease = CACurrentMediaTime() + 10;
         _lastWolfRelease = CACurrentMediaTime() + 10;
-        
-        [self scheduleUpdate];
       
         id cullSheepAction = [CCCallBlock actionWithBlock:^{
           [Sheep cullSheepInLayer:self];

@@ -6,5 +6,6 @@
 + (NSMutableArray *)sheepInPenInlayer:(CCLayer *)layer;
 + (void)cullSheepInPenInLayer:(CCLayer *)layer;
 - (void)cull;
+- (void)die;
 
 @end
