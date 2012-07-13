@@ -13,7 +13,7 @@
 - (void)newGame
 {
     self.score = 0;
-    self.livesLeft = 1;
+    self.livesLeft = 5;
     self.difficulty = 0;
     self.gameOver = NO;
 }

@@ -8,6 +8,7 @@
 
 #import "EntityLayer.h"
 #import "Sheep.h"
+#import "Wolf.h"
 #import "PathManager.h"
 
 @implementation EntityLayer
@@ -69,20 +70,26 @@
 {
     float difficulty = [GameManager sharedInstance].difficulty;
     
-    float max, min;
+    float max, min, wolves;
     
     if (difficulty < 10) {
         max = 1;
         min = 1;
+        // Let them get comfortable with catching sheep, no wolves at the start.
+        // False sense of security. mwhahaha
+        wolves = 0;
     } else if (difficulty < 20) {
         max = 2;
         min = 1;
+        wolves = 1;
     } else if (difficulty < 35) {
         max = 3;
         min = 1;
+        wolves = 2;
     } else {
         max = 4;
         min = 2;
+        wolves = 2;
     }
     
     int diff = MAX(1, max - min);
@@ -91,6 +98,10 @@
     
     for (int i=0; i<rand; i++) {
         [self emitSheep];
+    }
+  
+    for (int i=0; i<wolves; i++) {
+      [self emitWolf];
     }
 }
 
@@ -105,5 +116,17 @@
     [self addChild:mySheep];
     [mySheep walkPath:randomPath];
 }
+
+- (void)emitWolf
+{
+  CCLOG(@"Emit wolf");
+  
+  NSArray *randomPath = [[PathManager sharedInstance] arrayWithGameWaypoints];
+  
+  Wolf *myWolf = [[[Wolf alloc] init] autorelease];
+  [self addChild:myWolf];
+  [myWolf walkPath:randomPath];
+}
+
 
 @end

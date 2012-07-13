@@ -39,10 +39,7 @@ NSUInteger const SheepPoints = 100;
 #pragma mark Touch methods
 - (void) wasTouched
 {
-  // We are no longer interested in touches, stop accepting them
-  self.touchEnabled = NO;
-  [self stopAllActions];
-  self.state = AnimalStateCaptured;
+  [super wasTouched];
   
   // nothing in animal classes, subclasses implement
   NSLog(@"Baaaa, I was touched");
@@ -81,7 +78,6 @@ NSUInteger const SheepPoints = 100;
   self.state = AnimalStateInPen;
   NSLog(@"Baaa, I'm stuck in a pen");
     [[GameManager sharedInstance] updateScore:self.points];
-  // TODO: Add this once we have pen paths
   [self walkPenPath];
 }
 
