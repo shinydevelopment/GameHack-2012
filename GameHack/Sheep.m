@@ -12,7 +12,7 @@ NSUInteger const SheepPoints = 100;
   if (self) {
     // Load sheep sprite
     self.sprite = [CCSprite spriteWithFile:@"Sheep.png"];
-      
+    self.livesLostOnEscape = 1;
     [self addChild:self.sprite];
   }
   return self;
@@ -82,13 +82,13 @@ NSUInteger const SheepPoints = 100;
   NSLog(@"Baaa, I'm stuck in a pen");
     [[GameManager sharedInstance] updateScore:self.points];
   // TODO: Add this once we have pen paths
-  //  [self walkPenPath];
+  [self walkPenPath];
 }
 
 - (void)walkPenPath
 {
-  
-  NSArray *pathArray = [[PathManager sharedInstance] arrayWithGameWaypoints];
+
+  NSArray *pathArray = [[PathManager sharedInstance] arrayWithPaddockWaypoints];
   
   NSMutableArray *actions = [self actionsForPath:pathArray withLoop:YES];
   
@@ -98,10 +98,14 @@ NSUInteger const SheepPoints = 100;
   id transform = [CCMoveTo actionWithDuration:1.0 position:firstPoint];
   id moveToFirstPoint = [CCSequence actionWithArray:@[rotation, transform]];
   
-  id repeatSequence = [CCRepeatForever actionWithAction:[CCSequence actionWithArray:actions]];
+  // Have to do this as a block as we can't have repeat forever in a sequence
+  id arrived = [CCCallBlock actionWithBlock:^{
+    id repeatSequence = [CCRepeatForever actionWithAction:[CCSequence actionWithArray:actions]];
+    [self runAction:repeatSequence];
+  }];
   
   // move then repeat forever
-  [self runAction:[CCSequence actionWithArray:@[moveToFirstPoint, repeatSequence]]];
+  [self runAction:[CCSequence actionWithArray:@[moveToFirstPoint, arrived]]];
 }
 
 

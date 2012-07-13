@@ -906,6 +906,7 @@
 		5557986415AF6B6700B72C04 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55BD312115AFA4EB00FC0BA2 /* Audio */,
 				5557986615AF6B7000B72C04 /* Images */,
 			);
 			path = Resources;
@@ -928,6 +929,13 @@
 				5557986815AF6B9800B72C04 /* Sheep.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		55BD312115AFA4EB00FC0BA2 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		F677D13915AF62F0008A7F68 /* Game Scene */ = {

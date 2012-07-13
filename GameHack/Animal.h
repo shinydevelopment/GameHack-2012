@@ -14,6 +14,7 @@ typedef NSInteger AnimalStates;
 @property (assign) AnimalStates state;
 @property (assign) ccTime startTime;
 @property (readonly) NSUInteger points;
+@property (assign) NSInteger livesLostOnEscape;
 
 - (void)walkPath:(NSArray*)pathArray;
 - (NSMutableArray *)actionsForPath:(NSArray *)pathPoints withLoop:(BOOL)loops;
