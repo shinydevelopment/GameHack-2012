@@ -154,7 +154,6 @@
 		F677D14415AF6300008A7F68 /* EntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D13C15AF6300008A7F68 /* EntityLayer.m */; };
 		F677D14515AF6300008A7F68 /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14015AF6300008A7F68 /* HudLayer.m */; };
 		F677D14615AF6300008A7F68 /* DecorationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F677D14215AF6300008A7F68 /* DecorationLayer.m */; };
-		F677D14815AF630F008A7F68 /* gameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F677D14715AF630F008A7F68 /* gameBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -450,7 +449,6 @@
 		F677D14015AF6300008A7F68 /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
 		F677D14115AF6300008A7F68 /* DecorationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationLayer.h; sourceTree = "<group>"; };
 		F677D14215AF6300008A7F68 /* DecorationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationLayer.m; sourceTree = "<group>"; };
-		F677D14715AF630F008A7F68 /* gameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameBackground.png; path = Resources/gameBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,7 +543,6 @@
 		377C82A215AF3DCE00743C74 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F677D14715AF630F008A7F68 /* gameBackground.png */,
 				377C82A315AF3DCE00743C74 /* Default.png */,
 				377C82A515AF3DCE00743C74 /* Default-Landscape~ipad.png */,
 				377C82A715AF3DCE00743C74 /* fps_images.png */,
@@ -1011,7 +1008,6 @@
 				377C82B815AF3DCE00743C74 /* Icon@2x.png in Resources */,
 				377C82BB15AF3DCE00743C74 /* iTunesArtwork in Resources */,
 				377C83F915AF3DD000743C74 /* ChangeLog in Resources */,
-				F677D14815AF630F008A7F68 /* gameBackground.png in Resources */,
 				5557986915AF6B9800B72C04 /* Sheep-ipadhd.png in Resources */,
 				5557986A15AF6B9800B72C04 /* Sheep.png in Resources */,
 				55DABF0415AF8925009BBAB8 /* GameOver-ipadhd.png in Resources */,
