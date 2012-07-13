@@ -85,7 +85,10 @@
 
 - (void) wasTouched
 {
-  // nothing in animal classes, subclasses implement
+  // We are no longer interested in touches, stop accepting them
+  self.touchEnabled = NO;
+  [self stopAllActions];
+  self.state = AnimalStateCaptured;
 }
 
 #pragma mark - walking path
