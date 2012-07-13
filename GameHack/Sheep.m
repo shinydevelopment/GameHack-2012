@@ -36,13 +36,40 @@ NSUInteger const SheepPoints = 100;
 //
 //}
 
+- (void)animateLabelWithScore:(int)score
+{
+    __block CCLabelTTF *label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", score] fontName:@"Marker Felt" fontSize:16];
+    [label setColor:ccc3(255, 255, 255)];
+    label.position = self.position;
+    label.scale = 0;
+    
+    id transform = [CCMoveBy actionWithDuration:0.3 position:ccp(0, 10)];
+    id scale = [CCScaleTo actionWithDuration:0.5 scale:2];
+    
+    id spawn = [CCSpawn actionWithArray:@[ transform, scale ]];
+    
+    id fade = [CCFadeOut actionWithDuration:0.2];
+    
+    id callBlock = [CCCallBlock actionWithBlock:^{
+        [label removeFromParentAndCleanup:YES];
+    }];
+    
+    id sequence = [CCSequence actionWithArray:@[spawn, fade, callBlock]];
+    
+    [self.parent addChild:label];
+    [label runAction:sequence];
+}
+
 #pragma mark Touch methods
 - (void) wasTouched
 {
   [super wasTouched];
   
   // nothing in animal classes, subclasses implement
-  NSLog(@"Baaaa, I was touched");
+    NSLog(@"Baaaa, I was touched");
+    [[GameManager sharedInstance] updateScore:self.points];
+    
+    [self animateLabelWithScore:self.points];
   
 
   CGPoint penPoint = ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2);
@@ -77,7 +104,6 @@ NSUInteger const SheepPoints = 100;
 {
   self.state = AnimalStateInPen;
   NSLog(@"Baaa, I'm stuck in a pen");
-    [[GameManager sharedInstance] updateScore:self.points];
   [self walkPenPath];
 }
 
