@@ -92,6 +92,12 @@
 
 - (void)walkPath:(NSArray *)pathArray
 {
+    CGPoint startPoint = [pathArray[0] CGPointValue];
+  
+    // Move to the start
+    self.position = startPoint;
+  
+    // Get the actions to move along the path
     NSMutableArray *actions = [self actionsForPath:pathArray withLoop:NO];
 
     id arrived = [CCCallBlock actionWithBlock:^{
@@ -110,9 +116,8 @@
 - (NSMutableArray *)actionsForPath:(NSArray *)pathPoints withLoop:(BOOL)loops
 {
   CGPoint startPoint = [pathPoints[0] CGPointValue];
-  NSInteger targetIndex = 1;
   
-  self.position = startPoint;
+  NSInteger targetIndex = 1;
   
   NSMutableArray *actions = [NSMutableArray array];
   
