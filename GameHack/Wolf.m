@@ -38,6 +38,14 @@ NSUInteger const WolfPoints = 0;
 }
 
 #pragma mark Touch methods
+- (CGRect)rect
+{
+  // hack, make wolf easier to tap by redefining rect from animal.
+  CGSize s = [self.sprite contentSize];
+  return CGRectMake(-s.width / 2, -s.height / 2, s.width*3, s.height*2);
+}
+
+
 - (void) wasTouched
 {
   [super wasTouched];
