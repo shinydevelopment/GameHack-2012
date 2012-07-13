@@ -47,7 +47,10 @@
         _hudLayer.position = self.position;
         [self addChild:_hudLayer];
         
-        [[GameManager sharedInstance] newGame];
+      [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Background.mp3"];
+      [SimpleAudioEngine sharedEngine].backgroundMusicVolume = 1;
+
+      [[GameManager sharedInstance] newGame];
     }
     return self;
 }
