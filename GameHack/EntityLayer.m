@@ -21,6 +21,16 @@
         _sheepDelay = 3;
         
         [self scheduleUpdate];
+      
+        id cullSheepAction = [CCCallBlock actionWithBlock:^{
+          [Sheep cullSheepInLayer:self];
+        }];
+        id delayAction = [CCDelayTime actionWithDuration:2.0];
+      
+        id sequence = [CCSequence actionWithArray:@[cullSheepAction, delayAction]];
+      
+        [self runAction:[CCRepeatForever actionWithAction:sequence]];
+      
     }
     return self;
 }

@@ -2,4 +2,6 @@
 
 @interface Sheep : Animal
 
++ (void)cullSheepInLayer:(CCLayer *)layer;
+
 @end
