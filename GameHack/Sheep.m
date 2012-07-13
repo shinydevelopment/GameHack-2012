@@ -59,9 +59,20 @@ NSUInteger const SheepPoints = 100;
 
 - (void)die
 {
-    CCParticleSystemQuad *emitter = [CCParticleSystemQuad particleWithFile:@"bloodSplatter.plist"];
+    __block CCParticleSystemQuad *emitter = [CCParticleSystemQuad particleWithFile:@"bloodSplatter.plist"];
     emitter.position = self.position;
     [self.parent addChild:emitter];
+    
+    id delay = [CCDelayTime actionWithDuration:1.5];
+    
+    id callBlock = [CCCallBlock actionWithBlock:^{
+        [emitter removeFromParentAndCleanup:YES];
+    }];
+    
+    id sequence = [CCSequence actionWithArray:@[delay, callBlock]];
+    
+    [emitter runAction:sequence];
+    
     [self cull];
 }
 
