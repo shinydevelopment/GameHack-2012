@@ -15,6 +15,12 @@
   return self;
 }
 
+- (void)dealloc
+{
+  NSLog(@"Dealloc called on animal");
+  [super dealloc];
+}
+
 #pragma mark Properties
 - (BOOL)touchEnabled
 {
@@ -90,6 +96,7 @@
 
     id arrived = [CCCallBlock actionWithBlock:^{
       NSLog(@"Baaaaa! Made it! Phew!");
+      [self removeFromParentAndCleanup:YES];
     }];
     
     [actions addObject:arrived];

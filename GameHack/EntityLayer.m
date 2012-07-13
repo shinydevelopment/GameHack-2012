@@ -47,7 +47,7 @@
     
     NSArray *randomPath = [[PathManager sharedInstance] arrayWithWaypoints];
     
-    Sheep *mySheep = [[Sheep alloc] init];
+    Sheep *mySheep = [[[Sheep alloc] init] autorelease];
     [self addChild:mySheep];
     [mySheep walkPath:randomPath];
 }
