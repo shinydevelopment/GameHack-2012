@@ -21,7 +21,7 @@ NSUInteger const SheepPoints = 100;
 #pragma mark Class methods
 + (void)cullSheepInLayer:(CCLayer *)layer
 {
-  const NSInteger maxSheepInPen = 1;
+  const NSInteger maxSheepInPen = 5;
   NSMutableArray *caughtSheep = [NSMutableArray array];
   Sheep *sheep;
   for (CCNode *child in layer.children) {
