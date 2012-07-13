@@ -10,7 +10,7 @@ NSUInteger const WolfPoints = 0;
   self = [super init];
   if (self) {
     // Load wolf sprite
-    //    self.sprite = [CCSprite spriteWithFile:@""];
+    self.sprite = [CCSprite spriteWithFile:@"Wolf1.png"];
     self.livesLostOnEscape = 0;
     // Wolf isn't worth any points
   }
