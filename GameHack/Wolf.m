@@ -11,10 +11,27 @@ NSUInteger const WolfPoints = 0;
   if (self) {
     // Load wolf sprite
     self.sprite = [CCSprite spriteWithFile:@"Wolf1.png"];
+      
+      [self animate];
+      
     self.livesLostOnEscape = 0;
     // Wolf isn't worth any points
   }
   return self;
+}
+
+- (void)animate
+{
+    self.animation = [CCAnimation animation];
+    
+    [self.animation addSpriteFrameWithFilename:@"Wolf1.png"];
+    [self.animation addSpriteFrameWithFilename:@"Wolf2.png"];
+    
+    id animate = [CCAnimate actionWithAnimation:self.animation];
+    
+    id animateForever = [CCRepeatForever actionWithAction:animate];
+    
+    [self runAction:animateForever];
 }
 
 #pragma mark Properties
