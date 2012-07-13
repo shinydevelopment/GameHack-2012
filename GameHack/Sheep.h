@@ -7,5 +7,6 @@
 + (void)cullSheepInPenInLayer:(CCLayer *)layer;
 - (void)cull;
 - (void)die;
+- (void)bleat;
 
 @end
