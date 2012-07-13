@@ -55,6 +55,12 @@
         [[GameManager sharedInstance] newGame];
         
         [[GameManager sharedInstance] addObserver:self forKeyPath:@"gameOver" options:NSKeyValueObservingOptionNew context:NULL];
+
+        
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Background.mp3"];
+        [SimpleAudioEngine sharedEngine].backgroundMusicVolume = 1;
+
+      //[[GameManager sharedInstance] newGame];
     }
     return self;
 }
