@@ -87,9 +87,9 @@
         min = 2;
     }
     
-    int rand = arc4random()%1000/1000.0;
+    int diff = MAX(1, max - min);
     
-    rand = rand * (max-min) + min;
+    int rand = arc4random()%diff + min;
     
     for (int i=0; i<rand; i++) {
         [self emitSheep];
