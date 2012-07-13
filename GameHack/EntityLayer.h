@@ -13,9 +13,11 @@
 
 @property (nonatomic) ccTime lastSheepRelease;
 @property (nonatomic) double sheepDelay;
+@property (nonatomic) double goldenSheepDelay;
+@property (nonatomic) ccTime lastGoldenSheepRelease;
 
 - (void)emitSheep;
-
+- (void)emitGoldenSheep;
 - (void)emitRandomAnimals;
 
 @end
