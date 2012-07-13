@@ -21,6 +21,10 @@
         CCSprite *bgImage = [CCSprite spriteWithFile:@"Background.png"];
         bgImage.position = ccp(size.width * 0.5, size.height * 0.5);
         [self addChild:bgImage];
+      
+        CCSprite *paddockImage = [CCSprite spriteWithFile:@"Paddock.png"];
+        paddockImage.position = ccp(size.width * 0.5, size.height * 0.5);
+        [self addChild:paddockImage];
     }
     return self;
 }
