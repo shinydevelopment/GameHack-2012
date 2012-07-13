@@ -7,7 +7,6 @@
 //
 
 #import "HudLayer.h"
-#import "GameManager.h"
 
 @implementation HudLayer
 

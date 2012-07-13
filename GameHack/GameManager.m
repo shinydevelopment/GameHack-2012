@@ -14,6 +14,7 @@
 {
     self.score = 0;
     self.livesLeft = 5;
+    self.difficulty = 0;
 }
 
 - (void)updateScore:(int)points
