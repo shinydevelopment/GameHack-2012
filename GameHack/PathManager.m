@@ -16,7 +16,13 @@
   return self;
 }
 
-- (NSArray *)arrayWithWaypoints
+- (NSArray *)arrayWithGameWaypoints
+{
+  NSInteger randomIndex = arc4random() % [self.paths count];
+  return self.paths[randomIndex];
+}
+
+- (NSArray *)arrayWithPaddockWaypoints
 {
   NSInteger randomIndex = arc4random() % [self.paths count];
   return self.paths[randomIndex];
