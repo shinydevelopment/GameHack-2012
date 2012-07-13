@@ -16,14 +16,16 @@
     if (self) {
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        _scoreLabel = [CCLabelTTF labelWithString:@"Score: 0" fontName:@"Marker Felt" fontSize:32];
-        _scoreLabel.position = ccp(100, size.height - 100);
-        _scoreLabel.color = ccc3(255, 255, 255);
+        _scoreLabel = [CCLabelTTF labelWithString:@"Score: 0" fontName:@"Marker Felt" fontSize:40];
+        _scoreLabel.anchorPoint = ccp(0, 1);
+        _scoreLabel.position = ccp(20, size.height - 20);
+        _scoreLabel.color = ccc3(0, 0, 0);
         [self addChild:_scoreLabel];
         
-        _livesLabel = [CCLabelTTF labelWithString:@"Lives Left: 5" fontName:@"Marker Felt" fontSize:32];
-        _livesLabel.position = ccp(size.width - 100, size.height - 100);
-        _livesLabel.color = ccc3(255, 255, 255);
+        _livesLabel = [CCLabelTTF labelWithString:@"Lives Left: 5" fontName:@"Marker Felt" fontSize:40];
+        _livesLabel.anchorPoint = ccp(1, 1);
+        _livesLabel.position = ccp(size.width - 20, size.height - 20);
+        _livesLabel.color = ccc3(0, 0, 0);
         [self addChild:_livesLabel];
         
         [[GameManager sharedInstance] addObserver:self forKeyPath:@"score" options:NSKeyValueObservingOptionNew context:NULL];
