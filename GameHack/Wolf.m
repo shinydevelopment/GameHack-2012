@@ -56,6 +56,14 @@ NSUInteger const WolfPoints = 0;
 }
 
 #pragma mark Touch methods
+- (CGRect)rect
+{
+  // hack, make wolf easier to tap by redefining rect from animal.
+  CGSize s = [self.sprite contentSize];
+  return CGRectMake(-s.width / 2, -s.height / 2, s.width*5, s.height*2);
+}
+
+
 - (void) wasTouched
 {
   [super wasTouched];
@@ -84,7 +92,23 @@ NSUInteger const WolfPoints = 0;
   
   // After in pen, callback to let us know
   id actionCallFunc = [CCCallFunc actionWithTarget:self selector:@selector(wasMovedToPen)];
-  id actionSequence = [CCSequence actionWithArray:@[spawnAction, actionCallFunc]];
+  
+  id callBack = [CCCallBlock actionWithBlock:^{
+    id shake1 = [CCMoveBy actionWithDuration:0.05 position:ccp(10, 5)];
+    id shake2 = [CCMoveBy actionWithDuration:0.05 position:ccp(-5, -10)];
+    id shake3 = [CCMoveBy actionWithDuration:0.05 position:ccp(-5, 5)];
+    id sequence1 = [CCSequence actionWithArray:@[ shake1, shake2, shake3 ]];
+    
+    id grow = [CCScaleTo actionWithDuration:0.075 scale:1.05];
+    id shrink = [CCScaleTo actionWithDuration:0.075 scale:1];
+    id sequence2 = [CCSequence actionWithArray:@[ grow, shrink ]];
+    
+    id shakeAction = [CCSpawn actionWithArray:@[ sequence1, sequence2 ]];
+    
+    [[[CCDirector sharedDirector] runningScene] runAction:shakeAction];
+  }];
+    
+  id actionSequence = [CCSequence actionWithArray:@[spawnAction, callBack, actionCallFunc]];
   
   [self runAction:actionSequence];
   
