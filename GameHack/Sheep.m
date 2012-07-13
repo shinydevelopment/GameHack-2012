@@ -22,6 +22,21 @@ NSUInteger const SheepPoints = 100;
 + (void)cullSheepInLayer:(CCLayer *)layer
 {
   const NSInteger maxSheepInPen = 5;
+  NSMutableArray *caughtSheep = [Sheep sheepInPenInlayer:layer];
+  
+  Sheep *sheep;
+  if ([caughtSheep count] > maxSheepInPen) {
+    for (NSInteger killIndex=maxSheepInPen; killIndex < [caughtSheep count]; killIndex++) {
+      sheep = (Sheep *)caughtSheep[killIndex];
+      [sheep cull];
+    }
+  }
+  
+  NSLog(@"Culling some sheep");
+}
+
++ (NSMutableArray *)sheepInPenInlayer:(CCLayer *)layer
+{
   NSMutableArray *caughtSheep = [NSMutableArray array];
   Sheep *sheep;
   for (CCNode *child in layer.children) {
@@ -32,20 +47,24 @@ NSUInteger const SheepPoints = 100;
       }
     }
   }
-  
-  if ([caughtSheep count] > maxSheepInPen) {
-    for (NSInteger killIndex=maxSheepInPen; killIndex < [caughtSheep count]; killIndex++) {
-      sheep = (Sheep *)caughtSheep[killIndex];
-      id fadeOut = [CCFadeOut actionWithDuration:1.5];
-      id remove = [CCCallBlock actionWithBlock:^{
-        [sheep removeFromParentAndCleanup:YES];
-      }];
+  return caughtSheep;
+}
 
-      [sheep.sprite runAction:[CCSequence actionWithArray:@[fadeOut, remove]]];
-    }
-  }
++ (void)cullSheepInPenInLayer:(CCLayer *)layer
+{
+  NSMutableArray *caughtSheep = [Sheep sheepInPenInlayer:layer];
+  [(Sheep *)[caughtSheep lastObject] cull];
+  NSLog(@"WOLF KILLED SHEEP!");
+}
+
+- (void)cull
+{
+  id fadeOut = [CCFadeOut actionWithDuration:1.5];
+  id remove = [CCCallBlock actionWithBlock:^{
+    [self removeFromParentAndCleanup:YES];
+  }];
   
-  NSLog(@"Culling some sheep");
+  [self.sprite runAction:[CCSequence actionWithArray:@[fadeOut, remove]]];
 }
 
 #pragma mark Properties

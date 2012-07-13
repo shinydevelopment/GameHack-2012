@@ -1,5 +1,6 @@
 #import "Wolf.h"
 #import "PathManager.h"
+#import "Sheep.h"
 
 NSUInteger const WolfPoints = 0;
 
@@ -138,11 +139,37 @@ NSUInteger const WolfPoints = 0;
   
   // Run around 3 times and eat three sheep
   id arrived = [CCCallBlock actionWithBlock:^{
-    id repeatSequence = [CCRepeat actionWithAction:[CCSequence actionWithArray:actions] times:3];
-    [self runAction:repeatSequence];
+    // Take a life
+    [[GameManager sharedInstance] lostLives:1];
+    
+    // Run around the pen three times
+    // Cull a sheep each time (if there is one available)
+    id killSheep = [CCCallBlock actionWithBlock:^{
+      [Sheep cullSheepInPenInLayer:(CCLayer *)self.parent];
+    }];
+    
+    id fasterWolf = [CCSequence actionWithArray:actions];
+    
+    // Run around 3 times and kill 3 sheep
+    id repeatSequence = [CCRepeat actionWithAction:[CCSequence actionWithArray:@[killSheep,fasterWolf]] times:3];
+    
+    id wolfDies = [CCCallBlock actionWithBlock:^{
+      id fadeOut = [CCFadeOut actionWithDuration:1.5];
+      id remove = [CCCallBlock actionWithBlock:^{
+        [self removeFromParentAndCleanup:YES];
+      }];
+      
+      [self.sprite runAction:[CCSequence actionWithArray:@[fadeOut, remove]]];
+
+    }];
+    
+    id fullAnimation = [CCSpeed actionWithAction:[CCSequence actionWithArray:@[repeatSequence, wolfDies]] speed:5];
+    
+    // Run around then die
+    [self runAction:fullAnimation];
   }];
   
-  // move then repeat forever
+  // move to first position
   [self runAction:[CCSequence actionWithArray:@[moveToFirstPoint, arrived]]];
 }
 
