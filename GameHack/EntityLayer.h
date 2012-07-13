@@ -16,4 +16,7 @@
 
 - (void)emitSheep;
 
+- (void)calculateRandomDelay;
+- (void)emitRandomAnimals;
+
 @end

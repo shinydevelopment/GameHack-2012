@@ -1,5 +1,4 @@
 #import "Sheep.h"
-#import "GameManager.h"
 #import "PathManager.h"
 
 NSUInteger const SheepPoints = 100;
@@ -81,6 +80,7 @@ NSUInteger const SheepPoints = 100;
 {
   self.state = AnimalStateInPen;
   NSLog(@"Baaa, I'm stuck in a pen");
+    [[GameManager sharedInstance] updateScore:self.points];
   // TODO: Add this once we have pen paths
   //  [self walkPenPath];
 }
@@ -88,7 +88,7 @@ NSUInteger const SheepPoints = 100;
 - (void)walkPenPath
 {
   
-  NSArray *pathArray = [[PathManager sharedInstance] arrayWithWaypoints];
+  NSArray *pathArray = [[PathManager sharedInstance] arrayWithGameWaypoints];
   
   NSMutableArray *actions = [self actionsForPath:pathArray withLoop:YES];
   
