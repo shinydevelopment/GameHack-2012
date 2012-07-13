@@ -58,7 +58,8 @@
 
         
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Background.mp3"];
-        [SimpleAudioEngine sharedEngine].backgroundMusicVolume = 1;
+        [SimpleAudioEngine sharedEngine].backgroundMusicVolume = 0.75;
+        [SimpleAudioEngine sharedEngine].effectsVolume = 1.0;
 
       //[[GameManager sharedInstance] newGame];
     }

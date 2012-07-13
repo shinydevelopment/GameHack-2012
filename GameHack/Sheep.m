@@ -57,6 +57,11 @@ NSUInteger const SheepPoints = 100;
   NSLog(@"WOLF KILLED SHEEP!");
 }
 
+- (void)bleat
+{
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Baaaaaa.wav"];
+}
+
 - (void)die
 {
     __block CCParticleSystemQuad *emitter = [CCParticleSystemQuad particleWithFile:@"bloodSplatter.plist"];
@@ -138,6 +143,7 @@ NSUInteger const SheepPoints = 100;
     [[GameManager sharedInstance] updateScore:self.points];
     
     [self animateLabelWithScore:self.points];
+    [self bleat];
   
 
   CGPoint penPoint = ccp(self.parent.contentSize.width/2, self.parent.contentSize.height/2);
